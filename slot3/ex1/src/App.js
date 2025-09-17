@@ -2,17 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  // Khai báo hàm cộng
-  const result = (a, b) => a + b;
-
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Tiệm Tạp hóa KeyT</h1>
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>Kết quả cộng 2 + 3 là: {result(2, 3)}</p>
         <a
           className="App-link"
           href="https://reactjs.org"

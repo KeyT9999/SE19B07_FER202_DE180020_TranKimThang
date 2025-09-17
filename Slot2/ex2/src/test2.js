@@ -37,3 +37,6 @@ people.forEach(function(person){
     totalAge += person.age;
 });
 console.log(`Tong tuoi: ${totalAge}`);
+
+
+
