@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../mailapp"
+		},
+		{
+			"path": "../../../../../SWP391 Node JS - React/BookEat"
+		}
+	],
+	"settings": {}
+}

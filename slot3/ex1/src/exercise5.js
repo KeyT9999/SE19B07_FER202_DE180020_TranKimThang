@@ -7,14 +7,12 @@ const people = [
 ];
 
 // Dùng reduce để lọc người tuổi teen (13-19) và chuyển sang chuỗi "Tên (Tuổi)"
-// arr là mảng kết quả, person là từng phần tử trong people
 const teens = people.reduce((arr, person) => {
-  // Nếu tuổi nằm trong khoảng 13-19 thì thêm vào mảng kết quả
   if (person.age >= 13 && person.age <= 19) {
     arr.push(`${person.name} (${person.age})`);
   }
-  return arr; // trả về mảng cho lần lặp tiếp theo
-}, []); // giá trị khởi tạo là mảng rỗng
+  return arr;
+}, []);
 
 // In từng chuỗi ra màn hình
 teens.forEach(str => console.log(str));
