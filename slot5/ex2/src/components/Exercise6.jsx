@@ -1,3 +1,8 @@
+// Đề bài yêu cầu:
+// 1. Tạo một mảng companies gồm nhiều đối tượng công ty.
+// 2. Tạo một bản sao của mảng companies, sắp xếp theo thuộc tính end tăng dần (không làm thay đổi mảng gốc).
+// 3. Lấy ra 3 công ty có end nhỏ nhất (top 3).
+// 4. Hiển thị tên và end của 3 công ty này ra màn hình.
 export function Exercise6() {
   // Mảng companies
   const companies = [

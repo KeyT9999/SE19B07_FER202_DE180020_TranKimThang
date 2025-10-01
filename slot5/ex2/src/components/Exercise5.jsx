@@ -1,3 +1,5 @@
+//Yêu cầu đề bài: Lọc và hiển thị danh sách người tuổi teen
+
 export function Exercise5() {
   // Mảng people
   const people = [
@@ -8,10 +10,24 @@ export function Exercise5() {
     { name: "Sue", age: 13 }
   ];
 
+  //in ra người có tuổi cao nhất
+  const maxAge = Math.max(...people.map(p => p.age)); 
+
+  //kiem tra xem mot nguoi co phai tuoi teen(13-19) khong
+  const isTeen = person => person.age >= 13 && person.age <= 19;
   // Lọc những người tuổi teen (13-19) và map sang chuỗi "Tên (Tuổi)"
+
+
   const teens = people
-    .filter(person => person.age >= 13 && person.age <= 19)
+    .filter(isTeen)
     .map(person => `${person.name} (${person.age})`);
+
+    //Sắp xếp những người tuổi teen thro số tuổi giảm dần
+    teens.sort((a, b) => {
+      const ageA = parseInt(a.match(/\((\d+)\)/)[1], 10);
+      const ageB = parseInt(b.match(/\((\d+)\)/)[1], 10);
+      return ageB - ageA;
+    });
 
   return (
     <div>
@@ -21,5 +37,7 @@ export function Exercise5() {
       ))}
     </div>
   );
+
+
 }
 export default Exercise5;

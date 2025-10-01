@@ -1,3 +1,8 @@
+// Đề bài yêu cầu:
+// 1. Tạo một mảng companies gồm các đối tượng công ty.
+// 2. Tạo một đối tượng mới company0New từ companies[0], tăng start lên 1, không làm thay đổi companies[0] (dùng spread operator).
+// 3. Viết hàm concatAll nhận nhiều mảng (dùng rest parameter), trả về một mảng đã nối tất cả các mảng (dùng spread operator).
+// 4. Hiển thị ra màn hình giá trị của companies[0], company0New và kết quả concatAll([1,2],[3],[4,5]).
 export function Exercise7() {
   // Mảng companies
   const companies = [

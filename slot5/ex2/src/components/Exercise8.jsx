@@ -1,3 +1,4 @@
+//Yêu cầu đề bài: Tính toán tổng, min, max và đếm số lượng người trong các nhóm tuổi
 export function Exercise8() {
   // Mảng ages
   const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
