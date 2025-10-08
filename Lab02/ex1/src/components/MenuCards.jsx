@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function MenuCards() {
   return (
+    
     <section className="container py-4" id="menu">
       <h2 className="text-light mb-3">Our Menu</h2>
       <div className="menu__grid">
@@ -15,7 +16,8 @@ export default function MenuCards() {
               <span className="price--old">$40.00</span>
               <span className="price--new">$21.00</span>
             </div>
-            <button className="btn">Buy</button>
+              <button className="btn btn--primary">Buy</button>
+            
           </div>
         </article>
 
@@ -24,7 +26,7 @@ export default function MenuCards() {
           <div className="card__body">
             <h3>Mushroom Pizza</h3>
             <div className="price"><span>$25.00</span></div>
-            <button className="btn">Buy</button>
+            <button className="btn btn--primary">Buy</button>
           </div>
         </article>
 
@@ -34,7 +36,7 @@ export default function MenuCards() {
           <div className="card__body">
             <h3>Hawaiian Pizza</h3>
             <div className="price"><span>$30.00</span></div>
-            <button className="btn">Buy</button>
+      <button className="btn btn--primary">Buy</button>
           </div>
         </article>
 
@@ -47,7 +49,7 @@ export default function MenuCards() {
               <span className="price--old">$49.00</span>
               <span className="price--new">$36.00</span>
             </div>
-            <button className="btn">Buy</button>
+      <button className="btn btn--primary">Buy</button>
           </div>
         </article>
       </div>
