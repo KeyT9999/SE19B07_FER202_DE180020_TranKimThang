@@ -1,0 +1,57 @@
+/* App Styles */
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+/* Tabs Styles */
+.wizard-tabs .nav-tabs {
+  border-bottom: 2px solid #e9ecef;
+  margin-bottom: 0;
+}
+
+.wizard-tabs .nav-tabs .nav-link {
+  border: none;
+  border-radius: 0;
+  padding: 15px 25px;
+  font-weight: 500;
+  color: #6c757d;
+  background: none;
+  border-bottom: 3px solid transparent;
+}
+
+.wizard-tabs .nav-tabs .nav-link:hover {
+  border-color: transparent;
+  border-bottom-color: #dee2e6;
+  color: #495057;
+}
+
+.wizard-tabs .nav-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: #007bff;
+}
+
+.wizard-tabs .tab-content {
+  border: none;
+  padding: 0;
+}
+
+/* Success message styling */
+.alert-success {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success h4 {
+  color: #155724;
+  margin-bottom: 15px;
+}
+
+.alert-success p {
+  color: #155724;
+  margin-bottom: 20px;
+}
