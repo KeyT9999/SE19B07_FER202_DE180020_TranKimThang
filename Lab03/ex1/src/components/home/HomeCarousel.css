@@ -1,0 +1,61 @@
+/* src/components/home/HomeCarousel.css */
+
+/* Carousel full width, full screen height */
+.carousel {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Làm cho chữ trong carousel có màu trắng */
+.carousel-caption h3,
+.carousel-caption p {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Ảnh chiếm toàn bộ khung và co giãn đúng tỉ lệ */
+.carousel-img {
+  width: 100%;
+  height: 100vh;            /* 👈 full chiều cao màn hình (thay 75vh nếu muốn thấp hơn) */
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(85%);
+  transition: transform 6s ease;
+}
+
+.carousel-item:hover .carousel-img {
+  transform: scale(1.05);
+}
+
+/* Caption gradient + chữ sáng */
+.movie-caption {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  left: 5%;
+  right: 5%;
+  bottom: 2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.movie-caption h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.movie-caption p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #eee;
+}
+
+.movie-caption .badge-info {
+  background-color: #0dcaf0 !important;
+  color: #000 !important;
+}

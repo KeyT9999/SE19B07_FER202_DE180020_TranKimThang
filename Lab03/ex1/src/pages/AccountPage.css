@@ -1,0 +1,128 @@
+.account-wizard {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.account-wizard .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px 12px 0 0 !important;
+  border: none;
+}
+
+.account-wizard .card-header h3 {
+  color: white;
+}
+
+.step-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.step-indicator.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.step-indicator i {
+  font-size: 1.2rem;
+}
+
+.step-label {
+  display: block;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.step-indicator.active + .step-label {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.form-content {
+  min-height: 400px;
+  padding: 1rem 0;
+}
+
+.form-content h5 {
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-content .bi {
+  color: #6c757d;
+}
+
+.form-content .form-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-content .form-control:focus,
+.form-content .form-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-content .is-invalid {
+  border-color: #dc3545;
+}
+
+.form-content .invalid-feedback {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.btn-primary:hover {
+  background-color: #5a6fd8;
+  border-color: #5a6fd8;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .step-indicator {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .step-indicator i {
+    font-size: 1rem;
+  }
+  
+  .form-content {
+    min-height: 300px;
+  }
+}
