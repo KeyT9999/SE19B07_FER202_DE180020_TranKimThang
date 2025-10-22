@@ -1,7 +1,11 @@
 // Import React và các hook cần thiết
-import React, { useReducer, useMemo } from 'react';
+import React, { useReducer, useMemo, useRef } from 'react';
 // Import các component UI từ react-bootstrap
-import { Form, Button, Card, Container, Row, Col, Modal, Toast } from 'react-bootstrap';
+import { Form, Button, Card, Container, Row, Col } from 'react-bootstrap';
+// Import ConfirmModal component
+import ConfirmModalComponent from './ConfirmModalComponent';
+// Import ToastSignup component
+import ToastSignup from './ToastSignup';
 
 // Các hàm kiểm tra hợp lệ cho từng trường
 const isEmail = (v) => /\S+@\S+\.[A-Za-z]{2,}/.test(v); // kiểm tra định dạng email
@@ -86,7 +90,11 @@ function SignUpForm() {
   // state: trạng thái hiện tại, dispatch: hàm gửi action
   const [state, dispatch] = useReducer(signUpReducer, initialState);
   // Destructure các biến state cho dễ dùng
-  const { form, errors, showModal, showToast, isLoading, success } = state;
+  const { form, errors, isLoading } = state;
+  
+  // Ref cho ConfirmModal và ToastSignup
+  const confirmModalRef = useRef();
+  const toastRef = useRef();
 
   // Hàm kiểm tra hợp lệ cho từng trường (trả về chuỗi lỗi nếu có)
   const validate = (field, value) => {
@@ -120,7 +128,7 @@ function SignUpForm() {
       if (err) e[field] = err;
     });
     return e;
-  }, [form]);
+  }, [form, validate]);
 
   // Form hợp lệ khi không có lỗi nào
   const isValid = Object.keys(formErrors).length === 0;
@@ -136,7 +144,7 @@ function SignUpForm() {
     }
   };
 
-  // Xử lý submit form
+  // Xử lý submit form với confirm modal
   const handleSubmit = (e) => {
     e.preventDefault();
     // Kiểm tra lại toàn bộ lỗi trước khi submit
@@ -146,29 +154,66 @@ function SignUpForm() {
       if (err) newErrors[field] = err;
     });
     dispatch({ type: 'SET_ERRORS', payload: newErrors });
-    // Nếu không có lỗi thì tiến hành submit (giả lập API call)
+    
+    // Nếu không có lỗi thì hiển thị confirm modal
     if (Object.keys(newErrors).length === 0) {
-      dispatch({ type: 'SUBMIT_START' });
-      setTimeout(() => {
-        dispatch({ type: 'SUBMIT_SUCCESS' });
-      }, 1000); // giả lập delay 1s
+      confirmModalRef.current.showConfirm({
+        title: 'Xác nhận đăng ký',
+        message: `Bạn có chắc chắn muốn đăng ký với thông tin:\n- Username: ${form.username}\n- Email: ${form.email}`,
+        confirmText: 'Đăng ký',
+        cancelText: 'Hủy',
+        variant: 'primary',
+        type: 'confirm'
+      });
     }
   };
 
-  // Xử lý reset form về trạng thái ban đầu
+  // Hàm xác nhận submit
+  const handleConfirmSubmit = async () => {
+    dispatch({ type: 'SUBMIT_START' });
+    
+    // Giả lập API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    dispatch({ type: 'SUBMIT_SUCCESS' });
+    
+    // Hiển thị success toast
+    toastRef.current.showSuccess({
+      message: 'Đăng ký thành công! Chào mừng bạn đến với hệ thống.',
+      title: 'Đăng ký thành công',
+      delay: 4000
+    });
+  };
+
+  // Xử lý reset form với confirm
   const handleCancel = () => {
+    confirmModalRef.current.showWarning({
+      message: 'Bạn có chắc chắn muốn hủy và xóa tất cả thông tin đã nhập?',
+      confirmText: 'Xóa',
+      cancelText: 'Giữ lại'
+    });
+  };
+
+  const handleConfirmReset = () => {
     dispatch({ type: 'RESET' });
+    
+    // Hiển thị info toast
+    toastRef.current.showInfo({
+      message: 'Form đã được reset về trạng thái ban đầu.',
+      title: 'Reset thành công',
+      delay: 3000
+    });
   };
 
-  // Đóng toast thông báo
-  const handleCloseToast = () => {
-    dispatch({ type: 'SHOW_TOAST', payload: false });
-  };
+  // Đóng toast thông báo (không cần thiết nữa vì dùng ToastSignup)
+  // const handleCloseToast = () => {
+  //   dispatch({ type: 'SHOW_TOAST', payload: false });
+  // };
 
-  // Đóng modal kết quả
-  const handleCloseModal = () => {
-    dispatch({ type: 'SHOW_MODAL', payload: false });
-  };
+  // Đóng modal kết quả (không cần thiết nữa vì dùng ConfirmModal)
+  // const handleCloseModal = () => {
+  //   dispatch({ type: 'SHOW_MODAL', payload: false });
+  // };
 
   // Luồng hoạt động:
   // 1) Người dùng nhập liệu, thay đổi input → handleChange → dispatch SET_FIELD
@@ -288,47 +333,15 @@ function SignUpForm() {
         </Col>
       </Row>
       
-      {/* Toast thông báo submit thành công */}
-      <Toast
-        show={showToast}
-        onClose={handleCloseToast}
-        delay={2000}
-        autohide
-        style={{
-          position: 'fixed',
-          top: 20,
-          right: 20,
-          minWidth: 220,
-          zIndex: 9999,
-        }}
-      >
-        <Toast.Header>
-          <strong className="me-auto text-success">Success</strong>
-        </Toast.Header>
-        <Toast.Body>Submitted successfully!</Toast.Body>
-      </Toast>
+      {/* ToastSignup Component */}
+      <ToastSignup ref={toastRef} />
       
-      {/* Modal hiển thị thông tin đã submit */}
-      <Modal show={showModal} onHide={handleCloseModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Sign Up Info</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Card>
-            <Card.Body>
-              {/* Hiển thị lại thông tin đã nhập */}
-              <p><strong>Username:</strong> {form.username}</p>
-              <p><strong>Email:</strong> {form.email}</p>
-              <p><strong>Password:</strong> {form.password}</p>
-            </Card.Body>
-          </Card>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCancel}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {/* ConfirmModal Component */}
+      <ConfirmModalComponent
+        ref={confirmModalRef}
+        onConfirm={handleConfirmSubmit}
+        onCancel={handleConfirmReset}
+      />
     </Container>
   );
 }

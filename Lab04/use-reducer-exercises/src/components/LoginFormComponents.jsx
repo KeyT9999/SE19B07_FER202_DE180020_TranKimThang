@@ -1,7 +1,11 @@
 // Import React và hook useReducer để quản lý state phức tạp
-import React, { useReducer } from 'react';
+import React, { useReducer, useRef } from 'react';
 // Import các component UI từ react-bootstrap
 import { Button, Form, Card, Alert } from 'react-bootstrap';
+// Import ConfirmModal component
+import ConfirmModalComponent from './ConfirmModalComponent';
+// Import ToastSignup component
+import ToastSignup from './ToastSignup';
 
 // 1. Khởi tạo trạng thái ban đầu
 // initialState: lưu trữ các giá trị của form đăng nhập và trạng thái đăng nhập
@@ -67,6 +71,10 @@ function LoginForm() {
   //   - state: trạng thái hiện tại của form
   //   - dispatch: hàm gửi action để cập nhật state
   const [state, dispatch] = useReducer(loginReducer, initialState);
+  
+  // Ref cho ConfirmModal và ToastSignup
+  const confirmModalRef = useRef();
+  const toastRef = useRef();
 
   // Xử lý khi người dùng thay đổi username
   const handleUsernameChange = (e) => {
@@ -78,7 +86,7 @@ function LoginForm() {
     dispatch({ type: 'SET_PASSWORD', payload: e.target.value });
   };
 
-  // Xử lý khi người dùng nhấn nút đăng nhập
+  // Xử lý khi người dùng nhấn nút đăng nhập với confirm modal
   const handleLogin = async (e) => {
     e.preventDefault(); // Ngăn reload trang
     
@@ -88,6 +96,19 @@ function LoginForm() {
       return;
     }
 
+    // Hiển thị confirm modal
+    confirmModalRef.current.showConfirm({
+      title: 'Xác nhận đăng nhập',
+      message: `Bạn có chắc chắn muốn đăng nhập với tài khoản: ${state.username}?`,
+      confirmText: 'Đăng nhập',
+      cancelText: 'Hủy',
+      variant: 'primary',
+      type: 'confirm'
+    });
+  };
+
+  // Hàm xác nhận đăng nhập
+  const handleConfirmLogin = async () => {
     dispatch({ type: 'LOGIN_START' }); // Bắt đầu loading
 
     // Giả lập gọi API đăng nhập (chờ 1 giây)
@@ -97,22 +118,64 @@ function LoginForm() {
       // Kiểm tra thông tin đăng nhập (giả lập)
       if (state.username === 'admin' && state.password === '123456') {
         dispatch({ type: 'LOGIN_SUCCESS' }); // Thành công
+        
+        // Hiển thị success toast
+        toastRef.current.showSuccess({
+          message: 'Đăng nhập thành công! Chào mừng bạn quay trở lại.',
+          title: 'Đăng nhập thành công',
+          delay: 4000
+        });
       } else {
         dispatch({ type: 'LOGIN_ERROR', payload: 'Tên đăng nhập hoặc mật khẩu không đúng!' }); // Sai thông tin
+        
+        // Hiển thị error toast
+        toastRef.current.showError({
+          message: 'Tên đăng nhập hoặc mật khẩu không đúng!',
+          title: 'Đăng nhập thất bại',
+          delay: 4000
+        });
       }
     } catch (error) {
       dispatch({ type: 'LOGIN_ERROR', payload: 'Có lỗi xảy ra khi đăng nhập!' }); // Lỗi hệ thống
+      
+      toastRef.current.showError({
+        message: 'Có lỗi xảy ra khi đăng nhập!',
+        title: 'Lỗi hệ thống',
+        delay: 4000
+      });
     }
   };
 
-  // Xử lý khi người dùng nhấn nút đăng xuất
+  // Xử lý khi người dùng nhấn nút đăng xuất với confirm
   const handleLogout = () => {
+    confirmModalRef.current.showWarning({
+      message: 'Bạn có chắc chắn muốn đăng xuất?',
+      confirmText: 'Đăng xuất',
+      cancelText: 'Hủy'
+    });
+  };
+
+  const handleConfirmLogout = () => {
     dispatch({ type: 'LOGOUT' });
+    
+    // Hiển thị info toast
+    toastRef.current.showInfo({
+      message: 'Bạn đã đăng xuất thành công.',
+      title: 'Đăng xuất',
+      delay: 3000
+    });
   };
 
   // Xử lý khi người dùng nhấn nút reset
   const handleReset = () => {
     dispatch({ type: 'RESET' });
+    
+    // Hiển thị info toast
+    toastRef.current.showInfo({
+      message: 'Form đã được reset về trạng thái ban đầu.',
+      title: 'Reset thành công',
+      delay: 3000
+    });
   };
 
   // Nếu đã đăng nhập thành công, hiển thị giao diện chào mừng
@@ -147,71 +210,83 @@ function LoginForm() {
 
   // Nếu chưa đăng nhập, hiển thị form đăng nhập
   return (
-    <Card style={{ padding: '20px', margin: '20px auto', maxWidth: '400px' }}>
-      <Card.Header>
-        <h2>Form Đăng Nhập</h2>
-      </Card.Header>
-      <Card.Body>
-        {/* Form nhập thông tin đăng nhập */}
-        <Form onSubmit={handleLogin}>
-          <Form.Group className="mb-3">
-            <Form.Label>Tên đăng nhập:</Form.Label>
-            <Form.Control
-              type="text"
-              value={state.username}
-              onChange={handleUsernameChange}
-              placeholder="Nhập tên đăng nhập"
-              disabled={state.isLoading}
-            />
-          </Form.Group>
+    <>
+      <Card style={{ padding: '20px', margin: '20px auto', maxWidth: '400px' }}>
+        <Card.Header>
+          <h2>Form Đăng Nhập</h2>
+        </Card.Header>
+        <Card.Body>
+          {/* Form nhập thông tin đăng nhập */}
+          <Form onSubmit={handleLogin}>
+            <Form.Group className="mb-3">
+              <Form.Label>Tên đăng nhập:</Form.Label>
+              <Form.Control
+                type="text"
+                value={state.username}
+                onChange={handleUsernameChange}
+                placeholder="Nhập tên đăng nhập"
+                disabled={state.isLoading}
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Mật khẩu:</Form.Label>
-            <Form.Control
-              type="password"
-              value={state.password}
-              onChange={handlePasswordChange}
-              placeholder="Nhập mật khẩu"
-              disabled={state.isLoading}
-            />
-          </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Mật khẩu:</Form.Label>
+              <Form.Control
+                type="password"
+                value={state.password}
+                onChange={handlePasswordChange}
+                placeholder="Nhập mật khẩu"
+                disabled={state.isLoading}
+              />
+            </Form.Group>
 
-          {/* Hiển thị lỗi nếu có */}
-          {state.error && (
-            <Alert variant="danger" className="mb-3">
-              {state.error}
-            </Alert>
-          )}
+            {/* Hiển thị lỗi nếu có */}
+            {state.error && (
+              <Alert variant="danger" className="mb-3">
+                {state.error}
+              </Alert>
+            )}
 
-          {/* Nhóm nút đăng nhập và reset */}
-          <div>
-            <Button 
-              variant="primary" 
-              type="submit" 
-              disabled={state.isLoading}
-              style={{ marginRight: '10px' }}
-            >
-              {state.isLoading ? 'Đang đăng nhập...' : 'Đăng nhập'}
-            </Button>
-            <Button 
-              variant="secondary" 
-              type="button"
-              onClick={handleReset}
-              disabled={state.isLoading}
-            >
-              Reset
-            </Button>
+            {/* Nhóm nút đăng nhập và reset */}
+            <div>
+              <Button 
+                variant="primary" 
+                type="submit" 
+                disabled={state.isLoading}
+                style={{ marginRight: '10px' }}
+              >
+                {state.isLoading ? 'Đang đăng nhập...' : 'Đăng nhập'}
+              </Button>
+              <Button 
+                variant="secondary" 
+                type="button"
+                onClick={handleReset}
+                disabled={state.isLoading}
+              >
+                Reset
+              </Button>
+            </div>
+          </Form>
+          
+          {/* Thông tin test tài khoản */}
+          <div style={{ marginTop: '20px', fontSize: '14px', color: '#666' }}>
+            <p><strong>Thông tin test:</strong></p>
+            <p>Tên đăng nhập: admin</p>
+            <p>Mật khẩu: 123456</p>
           </div>
-        </Form>
-        
-        {/* Thông tin test tài khoản */}
-        <div style={{ marginTop: '20px', fontSize: '14px', color: '#666' }}>
-          <p><strong>Thông tin test:</strong></p>
-          <p>Tên đăng nhập: admin</p>
-          <p>Mật khẩu: 123456</p>
-        </div>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
+
+      {/* ToastSignup Component */}
+      <ToastSignup ref={toastRef} />
+
+      {/* ConfirmModal Component */}
+      <ConfirmModalComponent
+        ref={confirmModalRef}
+        onConfirm={handleConfirmLogin}
+        onCancel={handleConfirmLogout}
+      />
+    </>
   );
 }
 
