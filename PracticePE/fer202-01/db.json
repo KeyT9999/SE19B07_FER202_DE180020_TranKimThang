@@ -1,0 +1,86 @@
+{
+  "mobiles": [
+    {
+      "id": 1,
+      "name": "Iphone14",
+      "price": 399,
+      "desc": "Iphone14 smartphone with great performance and features.",
+      "image": "/images/mobiles/iphone14.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Oppo Reno13",
+      "price": 549,
+      "desc": "Oppo Reno13 smartphone with great performance and features.",
+      "image": "/images/mobiles/oppo-reno13.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pixel7",
+      "price": 599,
+      "desc": "Pixel7 smartphone with great performance and features.",
+      "image": "/images/mobiles/pixel7.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy S23",
+      "price": 699,
+      "desc": "Samsung Galaxy S23 smartphone with great performance and features.",
+      "image": "/images/mobiles/galaxy-s23.jpg"
+    },
+    {
+      "id": 5,
+      "name": "OnePlus 11",
+      "price": 649,
+      "desc": "OnePlus 11 smartphone with great performance and features.",
+      "image": "/images/mobiles/oneplus-11.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Xiaomi Mi 13",
+      "price": 599,
+      "desc": "Xiaomi Mi 13 smartphone with great performance and features.",
+      "image": "/images/mobiles/xiaomi-mi13.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "email": "user1@mail.com",
+      "password": "password123"
+    },
+    {
+      "id": 3,
+      "username": "john",
+      "email": "john@mail.com",
+      "password": "john123"
+    }
+  ],
+  "carousel": [
+    {
+      "id": 1,
+      "title": "iPhone 16",
+      "description": "Hiệu năng thế hệ mới, nâng cấp camera & pin.",
+      "image": "/images/carousel/iphone16.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S24 Ultra",
+      "description": "Flagship smartphone with advanced features.",
+      "image": "/images/carousel/galaxy-s24-ultra.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Google Pixel 8 Pro",
+      "description": "AI-powered camera system and innovative design.",
+      "image": "/images/carousel/pixel8-pro.jpg"
+    }
+  ]
+}

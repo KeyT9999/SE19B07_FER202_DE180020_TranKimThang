@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Products() {
   const navigate = useNavigate();
+  
   const products = [
     {
-      id: 1,
+      id: 101, // ID theo yêu cầu bài tập
       name: "Netflix Premium",
       price: "89K / tháng",
       logo: "🎬",
@@ -14,7 +15,7 @@ function Products() {
       color: "#E50914"
     },
     {
-      id: 2,
+      id: 102, // ID theo yêu cầu bài tập
       name: "Canva Pro",
       price: "189K / năm",
       logo: "🎨",
@@ -23,7 +24,7 @@ function Products() {
       color: "#00C4CC"
     },
     {
-      id: 3,
+      id: 103, // ID theo yêu cầu bài tập
       name: "Spotify Premium",
       price: "365K / năm",
       logo: "🎵",
@@ -61,11 +62,25 @@ function Products() {
   ];
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
-      <h1 style={{ textAlign: 'center', color: '#333', marginBottom: '30px' }}>
+    <div style={{ 
+      padding: '20px', 
+      backgroundColor: '#f8f9fa', 
+      minHeight: '100vh' 
+    }}>
+      <h1 style={{ 
+        textAlign: 'center', 
+        color: '#333', 
+        marginBottom: '30px' 
+      }}>
         Dịch Vụ Số Cao Cấp
       </h1>
-      <p style={{ textAlign: 'center', color: '#666', marginBottom: '40px', fontSize: '18px' }}>
+      
+      <p style={{ 
+        textAlign: 'center', 
+        color: '#666', 
+        marginBottom: '40px', 
+        fontSize: '18px' 
+      }}>
         Khám phá các dịch vụ số tuyệt vời với giá cả hợp lý!
       </p>
       
@@ -76,10 +91,14 @@ function Products() {
         maxWidth: '1200px', 
         margin: '0 auto' 
       }}>
-        {products.map(product => (
-          <div 
+        {products.slice(0, 3).map(product => (
+          <Link 
             key={product.id}
+            to={`/san-pham/${product.id}`}
             style={{
+              textDecoration: 'none',
+              color: 'inherit',
+              display: 'block',
               backgroundColor: 'white',
               borderRadius: '12px',
               padding: '20px',
@@ -121,9 +140,15 @@ function Products() {
               }}>
                 {product.logo}
               </div>
-              <h3 style={{ margin: '0 0 10px', color: '#333', fontSize: '20px' }}>
+              
+              <h3 style={{ 
+                margin: '0 0 10px', 
+                color: '#333', 
+                fontSize: '20px' 
+              }}>
                 {product.name}
               </h3>
+              
               <div style={{ 
                 fontSize: '18px', 
                 fontWeight: 'bold', 
@@ -135,10 +160,19 @@ function Products() {
             </div>
 
             <div style={{ marginBottom: '20px' }}>
-              <h4 style={{ color: '#555', marginBottom: '10px', fontSize: '16px' }}>
+              <h4 style={{ 
+                color: '#555', 
+                marginBottom: '10px', 
+                fontSize: '16px' 
+              }}>
                 Tính năng nổi bật:
               </h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              
+              <ul style={{ 
+                listStyle: 'none', 
+                padding: 0, 
+                margin: 0 
+              }}>
                 {product.features.map((feature, index) => (
                   <li key={index} style={{ 
                     marginBottom: '8px', 
@@ -146,38 +180,81 @@ function Products() {
                     alignItems: 'center',
                     color: '#666'
                   }}>
-                    <span style={{ color: '#28a745', marginRight: '8px' }}>✓</span>
+                    <span style={{ 
+                      color: '#28a745', 
+                      marginRight: '8px' 
+                    }}>
+                      ✓
+                    </span>
                     {feature}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <button 
-              onClick={() => navigate('/lien-he')}
-              style={{
-                width: '100%',
-                padding: '12px',
-                backgroundColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: 'opacity 0.3s ease',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px'
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '0.9'}
-              onMouseLeave={(e) => e.target.style.opacity = '1'}
-            >
-              💬 Liên hệ ngay
-            </button>
-          </div>
+                         <button 
+               onClick={(e) => {
+                 e.preventDefault();
+                 e.stopPropagation();
+                 navigate('/lien-he');
+               }}
+               style={{
+                 width: '100%',
+                 padding: '12px',
+                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                 color: 'white',
+                 border: 'none',
+                 borderRadius: '8px',
+                 fontSize: '16px',
+                 fontWeight: 'bold',
+                 cursor: 'pointer',
+                 transition: 'opacity 0.3s ease',
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 gap: '8px',
+                 marginBottom: '10px'
+               }}
+               onMouseEnter={(e) => e.target.style.opacity = '0.9'}
+               onMouseLeave={(e) => e.target.style.opacity = '1'}
+             >
+               💬 Liên hệ ngay
+             </button>
+
+             <button 
+               onClick={(e) => {
+                 e.preventDefault();
+                 e.stopPropagation();
+                 navigate(`/san-pham/${product.id}`);
+               }}
+               style={{
+                 width: '100%',
+                 padding: '12px',
+                 backgroundColor: 'transparent',
+                 color: product.color,
+                 border: `2px solid ${product.color}`,
+                 borderRadius: '8px',
+                 fontSize: '16px',
+                 fontWeight: 'bold',
+                 cursor: 'pointer',
+                 transition: 'all 0.3s ease',
+                 display: 'flex',
+                 alignItems: 'center',
+                 justifyContent: 'center',
+                 gap: '8px'
+               }}
+               onMouseEnter={(e) => {
+                 e.target.style.backgroundColor = product.color;
+                 e.target.style.color = 'white';
+               }}
+               onMouseLeave={(e) => {
+                 e.target.style.backgroundColor = 'transparent';
+                 e.target.style.color = product.color;
+               }}
+             >
+               👁️ Xem chi tiết
+             </button>
+           </Link>
         ))}
       </div>
     </div>
