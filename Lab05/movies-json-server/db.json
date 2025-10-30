@@ -1,0 +1,151 @@
+{
+  "genres": [
+    {
+      "id": "1",
+      "name": "Sci-Fi"
+    },
+    {
+      "id": "2",
+      "name": "Comedy"
+    },
+    {
+      "id": "3",
+      "name": "Drama"
+    },
+    {
+      "id": "4",
+      "name": "Horror"
+    },
+    {
+      "id": "5",
+      "name": "Romance"
+    },
+    {
+      "id": "6",
+      "name": "Action"
+    },
+    {
+      "id": "7",
+      "name": "Thriller"
+    }
+  ],
+  "movies": [
+    {
+      "id": "1",
+      "title": "Galactic Wars",
+      "description": "Epic space battles decide the fate of a fractured galaxy as rival factions clash for control.",
+      "avatar": "https://picsum.photos/seed/galactic-wars/400/250",
+      "poster": "/images/movie1.jpg",
+      "genreId": 1,
+      "year": 2022,
+      "country": "USA",
+      "duration": 132
+    },
+    {
+      "id": "2",
+      "title": "Laugh Out Loud",
+      "description": "A feel-good comedy about friendship, failure, and second chances in a small town.",
+      "avatar": "https://picsum.photos/seed/laugh-out-loud/400/250",
+      "poster": "/images/movie2.jpg",
+      "genreId": 2,
+      "year": 2021,
+      "country": "UK",
+      "duration": 105
+    },
+    {
+      "id": "3",
+      "title": "Deep Blue",
+      "description": "A gripping survival drama set far from shore when a voyage goes wrong.",
+      "avatar": "https://picsum.photos/seed/deep-blue/400/250",
+      "poster": "/images/movie3.jpg",
+      "genreId": 3,
+      "year": 2019,
+      "country": "Australia",
+      "duration": 118
+    },
+    {
+      "id": "4",
+      "title": "Haunted House",
+      "description": "A teen dares to spend one night in a house with a dark past—and uncovers the truth.",
+      "avatar": "https://picsum.photos/seed/haunted-house/400/250",
+      "poster": "/images/movie4.jpg",
+      "genreId": 4,
+      "year": 2020,
+      "country": "Canada",
+      "duration": 98
+    },
+    {
+      "id": "5",
+      "title": "City of Love 1",
+      "description": "Two strangers meet in a sleepless city and rewrite their plans for life and love.",
+      "avatar": "https://picsum.photos/seed/city-of-love/400/250",
+      "poster": "/images/movie5.jpg",
+      "genreId": 5,
+      "year": 2018,
+      "country": "France",
+      "duration": 110
+    },
+    {
+      "id": "6",
+      "title": "The Time Traveler",
+      "description": "A brilliant scientist discovers a way to bend time—at a cost no one could foresee.",
+      "avatar": "https://picsum.photos/seed/time-traveler/400/250",
+      "poster": "/images/movie6.jpg",
+      "genreId": 1,
+      "year": 2023,
+      "country": "USA",
+      "duration": 124
+    },
+    {
+      "id": "7",
+      "title": "Street Runner",
+      "description": "An ex-courier is forced back into the fast lane for one last job across the neon city.",
+      "avatar": "https://picsum.photos/seed/street-runner/400/250",
+      "poster": "/images/movie7.jpg",
+      "genreId": 6,
+      "year": 2021,
+      "country": "Japan",
+      "duration": 102
+    },
+    {
+      "id": "8",
+      "title": "Hidden Truth",
+      "description": "A reporter unravels a conspiracy that powerful people will do anything to keep buried.",
+      "avatar": "https://picsum.photos/seed/hidden-truth/400/250",
+      "poster": "/images/movie8.jpg",
+      "genreId": 7,
+      "year": 2022,
+      "country": "Germany",
+      "duration": 115
+    },
+    {
+      "id": "9",
+      "title": "Kingdom of Ash",
+      "description": "A fallen prince must unite rival clans to reclaim a cursed land and his destiny.",
+      "avatar": "https://picsum.photos/seed/kingdom-of-ash/400/250",
+      "poster": "/images/movie9.jpg",
+      "genreId": 2,
+      "year": 2020,
+      "country": "New Zealand",
+      "duration": 141
+    }
+  ],
+  "accounts": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "fullName": "Administrator",
+      "role": "admin",
+      "email": "admin@example.com"
+    },
+    {
+      "id": "2",
+      "username": "staff",
+      "password": "staff123",
+      "fullName": "Movie Staff",
+      "role": "staff",
+      "email": "staff@example.com"
+    }
+  ]
+}
