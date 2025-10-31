@@ -7,6 +7,7 @@ const AppHeader = () => {
   const { user } = useAuthState();
   const { logout } = useAuthActions();
   const navigate = useNavigate();
+  const displayName = user?.fullName || user?.username;
 
   // Clear session then redirect to login so protected routes lock again.
   const handleLogout = () => {
@@ -33,7 +34,7 @@ const AppHeader = () => {
             {user ? (
               <>
                 <div className="text-light text-end">
-                  <div className="fw-semibold">{user.fullName}</div>
+                  <div className="fw-semibold">Welcome, {displayName}</div>
                   <small className="text-secondary">{user.email}</small>
                 </div>
                 <Button variant="outline-light" size="sm" onClick={handleLogout}>

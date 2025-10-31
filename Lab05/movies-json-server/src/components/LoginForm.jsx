@@ -1,6 +1,6 @@
 //LoginForm.jsx is a functional component that uses the useReducer hook to manage form state and AuthContext for authentication.
 import React, { useEffect, useReducer, useState } from 'react';
-import { Button, Form, Card, Alert } from 'react-bootstrap';
+import { Button, Form, Card, Alert, Modal } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import ConfirmModal from './ConfirmModal';
@@ -59,6 +59,8 @@ function LoginForm() {
 
     // State cho ConfirmModal
     const [showLogoutModal, setShowLogoutModal] = useState(false);
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
     // Validation function
     const validateForm = () => {
@@ -96,11 +98,10 @@ function LoginForm() {
             
             if (result?.ok) {
                 dispatch({ type: 'RESET_FORM' });
-                showToast(
-                    'Đăng nhập thành công!',
-                    result.message || `Chào mừng ${state.username}!`,
-                    'success'
-                );
+                const message = result.message || `Chào mừng ${state.username}!`;
+                setSuccessMessage(message);
+                setShowSuccessModal(true);
+                showToast('Đăng nhập thành công!', message, 'success');
             } else {
                 const errorMessage = result?.message || authError || 'Có lỗi xảy ra';
                 showToast('Đăng nhập thất bại!', errorMessage, 'danger');
@@ -134,6 +135,11 @@ function LoginForm() {
         setShowLogoutModal(false);
     };
 
+    const handleCloseSuccessModal = () => {
+        setShowSuccessModal(false);
+        setSuccessMessage('');
+    };
+
     // Style cho form
     const formStyle = {
         maxWidth: '400px',
@@ -148,14 +154,14 @@ function LoginForm() {
 
     // Điều hướng tới trang được bảo vệ ngay khi đăng nhập thành công.
     useEffect(() => {
-        if (isAuthenticated && user) {
+        if (isAuthenticated && user && !showSuccessModal) {
             const redirectTo = location.state?.from?.pathname || '/movies';
             const timer = setTimeout(() => {
                 navigate(redirectTo, { replace: true });
             }, 800);
             return () => clearTimeout(timer);
         }
-    }, [isAuthenticated, user, navigate, location]);
+    }, [isAuthenticated, user, navigate, location, showSuccessModal]);
 
     // Nếu đã đăng nhập, hiển thị thông tin user
     if (isAuthenticated && user) {
@@ -191,6 +197,23 @@ function LoginForm() {
                     cancelText="Hủy"
                     variant="danger"
                 />
+
+                <Modal show={showSuccessModal} onHide={handleCloseSuccessModal} centered>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Đăng nhập thành công</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p className="mb-2">{successMessage || `Chào mừng ${user.fullName || user.username}!`}</p>
+                        <p className="mb-0 text-muted">
+                            Bạn sẽ được chuyển tới trang quản lý phim ngay sau khi đóng hộp thoại này.
+                        </p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="primary" onClick={handleCloseSuccessModal}>
+                            Tiếp tục
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
 
                 {/* Toast Component */}
                 <ToastComponent />

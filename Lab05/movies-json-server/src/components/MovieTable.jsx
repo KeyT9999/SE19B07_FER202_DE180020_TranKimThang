@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Table, Button, Image, Modal, Spinner, Card, Badge } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { useMovieState, useMovieDispatch } from '../contexts/MovieContext';
 
 const badgeClassMap = {
@@ -15,6 +16,7 @@ const badgeClassMap = {
 const MovieTable = () => {
   const state = useMovieState();
   const { dispatch, confirmDelete } = useMovieDispatch();
+  const navigate = useNavigate();
 
   const { movies, genres, loading, movieToDelete, showDeleteModal, filters } = state;
 
@@ -69,6 +71,10 @@ const MovieTable = () => {
 
   const handleDeleteClick = movie => {
     dispatch({ type: 'OPEN_DELETE_MODAL', payload: movie });
+  };
+
+  const handleViewDetails = movie => {
+    navigate(`/movies/${movie.id}`);
   };
 
   return (
@@ -142,6 +148,14 @@ const MovieTable = () => {
                           <td>{movie.duration} phút</td>
                           <td>
                             <div className="d-flex gap-2">
+                              <Button
+                                variant="outline-info"
+                                size="sm"
+                                className="table-action-btn"
+                                onClick={() => handleViewDetails(movie)}
+                              >
+                                View Details
+                              </Button>
                               <Button
                                 variant="outline-primary"
                                 size="sm"

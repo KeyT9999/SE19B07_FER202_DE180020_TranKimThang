@@ -54,7 +54,7 @@
     },
     {
       "id": "3",
-      "title": "Deep Blue",
+      "title": "Deep Blue 123",
       "description": "A gripping survival drama set far from shore when a voyage goes wrong.",
       "avatar": "https://picsum.photos/seed/deep-blue/400/250",
       "poster": "/images/movie3.jpg",
@@ -73,17 +73,6 @@
       "year": 2020,
       "country": "Canada",
       "duration": 98
-    },
-    {
-      "id": "5",
-      "title": "City of Love 1",
-      "description": "Two strangers meet in a sleepless city and rewrite their plans for life and love.",
-      "avatar": "https://picsum.photos/seed/city-of-love/400/250",
-      "poster": "/images/movie5.jpg",
-      "genreId": 5,
-      "year": 2018,
-      "country": "France",
-      "duration": 110
     },
     {
       "id": "6",
