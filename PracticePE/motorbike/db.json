@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "tai",
+      "password": "123456",
+      "email": "ptttai123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "username": "Thanh",
+      "password": "123456",
+      "email": "abc123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "username": "Phan",
+      "password": "123456",
+      "email": "bcd123@gmail.com",
+      "role": "user",
+      "status": "active"
+    }
+  ],
+  "motobikes": [
+    {
+      "id": "1",
+      "name": "Yamaha MT-15",
+      "brand": "Yamaha",
+      "model": "MT-15 2024",
+      "year": 2024,
+      "image": "img/picture1.webp",
+      "price": "72,000,000 VND",
+      "quantity": 8
+    },
+    {
+      "id": "2",
+      "name": "Honda CBR150R",
+      "brand": "Honda",
+      "model": "CBR150R 2023",
+      "year": 2023,
+      "image": "img/picture2.jfif",
+      "price": "75,500,000 VND",
+      "quantity": 5
+    },
+    {
+      "id": "3",
+      "name": "Suzuki GSX-S150",
+      "brand": "Suzuki",
+      "model": "GSX-S150 2024",
+      "year": 2024,
+      "image": "img/picture3.webp",
+      "price": "71,000,000 VND",
+      "quantity": 6
+    },
+    {
+      "id": "4",
+      "name": "Kawasaki Z400",
+      "brand": "Kawasaki",
+      "model": "Z400 2024 ABS",
+      "year": 2024,
+      "image": "img/picture4.webp",
+      "price": "149,000,000 VND",
+      "quantity": 3
+    }
+  ]
+}

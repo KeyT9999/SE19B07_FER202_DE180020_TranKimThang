@@ -1,0 +1,32 @@
+{
+  "store": {
+    "storeName": "FreshFood Mart",
+    "location": "456 Hoàng Diệu, Hải Châu, Đà Nẵng",
+    "products": [
+      {
+        "id": 1,
+        "name": "Sườn Non - Heo Thảo Mộc",
+        "img": "/img/picture1.jpg",
+        "category": "Meat",
+        "price": 71240,
+        "stock": 18
+      },
+      {
+        "id": 2,
+        "name": "Cá Thu Cắt Lát",
+        "img": "/img/picture2.jpg",
+        "category": "Fish",
+        "price": 66600,
+        "stock": 12
+      },
+      {
+        "id": 3,
+        "name": "Tôm Tươi Nhỏ",
+        "img": "/img/picture3.jpg",
+        "category": "Seafood",
+        "price": 42000,
+        "stock": 23
+      }
+    ]
+  }
+}
