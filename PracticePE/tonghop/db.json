@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone14",
+      "description": "Iphone14 smartphone with great performance and features.",
+      "price": 399,
+      "image": "images/phones/iphone14.jpg",
+      "category": "iphone"
+    },
+
+    {
+      "id": 2,
+      "name": "Oppo Reno13",
+      "description": "Oppo Reno13 smartphone with great performance and features.",
+      "price": 549,
+      "image": "images/phones/oppo-reno13.jpg",
+      "category": "oppo"
+    },
+    {
+      "id": 3,
+      "name": "Pixel7",
+      "description": "Pixel7 smartphone with great performance and features.",
+      "price": 599,
+      "image": "images/phones/pixel7.jpg",
+      "category": "google"
+    },
+    {
+      "id": 4,
+      "name": "Redmi Note 12",
+      "description": "Redmi Note 12 smartphone with great performance and features.",
+      "price": 649,
+      "image": "images/phones/redmi-note-12.jpg",
+      "category": "samsung"
+    },
+    {
+      "id": 5,
+      "name": "Redmi Note 8",
+      "description": "Redmi Note 8 smartphone with great performance and features.",
+      "price": 699,
+      "image": "images/phones/redmi-note-8.jpg",
+      "category": "samsung"
+    },
+    {
+      "id": 6,
+      "name": "S23",
+      "description": "S23 smartphone with great performance and features.",
+      "price": 749,
+      "image": "images/phones/s23.jpg",
+      "category": "samsung"
+    },
+    {
+      "id": 7,
+      "name": "Samsungs24 Ultra",
+      "description": "Samsungs24 Ultra smartphone with great performance and features.",
+      "price": 799,
+      "image": "images/phones/samsungS24-ultra.jpg",
+      "category": "samsung"
+    }
+  ],
+  "accounts": [
+    {
+      "email": "admin@example.com",
+      "password": "Admin123@",
+      "isActive": true
+    },
+    {
+      "email": "bobb@example.com",
+      "password": "Bobb123@",
+      "isActive": false
+    },
+    {
+      "email": "traltb@fe.edu.vn",
+      "password": "Traltb123@",
+      "isActive": true
+    }
+  ]
+}

@@ -66,3 +66,6 @@ export function ConfirmModal({ show, title, message }) {
     </>
   );
 }
+
+// Export default để tương thích với các import khác
+export default ConfirmModal;

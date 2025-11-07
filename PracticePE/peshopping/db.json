@@ -1,4 +1,30 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "username": "tai",
+      "password": "123456",
+      "email": "ptttai123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "username": "Thanh",
+      "password": "123456",
+      "email": "abc123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "username": "Phan",
+      "password": "123456",
+      "email": "bcd123@gmail.com",
+      "role": "user",
+      "status": "active"
+    }
+  ],
   "store": {
     "storeName": "FreshFood Mart",
     "location": "456 Hoàng Diệu, Hải Châu, Đà Nẵng",
@@ -17,7 +43,7 @@
         "img": "/img/picture2.jpg",
         "category": "Fish",
         "price": 66600,
-        "stock": 12
+        "stock": 9
       },
       {
         "id": 3,

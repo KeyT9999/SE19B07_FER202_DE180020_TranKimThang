@@ -1,4 +1,30 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "username": "tai",
+      "password": "123456",
+      "email": "ptttai123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "username": "Thanh",
+      "password": "123456",
+      "email": "abc123@gmail.com",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "username": "Phan",
+      "password": "123456",
+      "email": "bcd123@gmail.com",
+      "role": "user",
+      "status": "active"
+    }
+  ],
   "genres": [
     { "id": 1, "name": "Sci-Fi" },
     { "id": 2, "name": "Comedy" },

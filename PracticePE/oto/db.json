@@ -1,7 +1,7 @@
 {
   "Cars": [
     {
-      "id": 1,
+      "id": "1",
       "make": "Toyota",
       "model": "Corolla",
       "year": 2022,
@@ -9,7 +9,7 @@
       "image": "/img/Corolla.jfif"
     },
     {
-      "id": 2,
+      "id": "2",
       "make": "Honda",
       "model": "Civic",
       "year": 2021,
@@ -17,7 +17,7 @@
       "image": "/img/honda.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "make": "Ford",
       "model": "Mustang",
       "year": 2023,
@@ -25,7 +25,7 @@
       "image": "/img/ford.webp"
     },
     {
-      "id": 4,
+      "id": "4",
       "make": "BMW",
       "model": "X5",
       "year": 2020,
@@ -44,6 +44,12 @@
       "id": "4f17",
       "username": "tai",
       "email": "Gptkeyt6@outlook.com.vn",
+      "password": "123456"
+    },
+    {
+      "id": "7315",
+      "username": "tai",
+      "email": "trankimthang0207@gmail.com",
       "password": "123456"
     }
   ]

@@ -29,11 +29,15 @@ import "./App.css";
 // Import Bootstrap CSS (framework CSS để styling)
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Import Context Providers
+import { AuthProvider } from "./context/AuthContext";
+
 // Import các components
 import HeaderComponent from "./components/HeaderComponent"; // Header có navigation bar
 import HomePage from "./pages/HomePage"; // Trang chủ
 import FooterComponent from "./components/FooterComponent"; // Footer
 import StorePage from "./pages/StorePage"; // Trang cửa hàng
+import LoginForm from "./components/LoginForm"; // Trang đăng nhập
 
 /**
  * App Component - Component chính của ứng dụng
@@ -43,26 +47,32 @@ function App() {
   return (
     // BrowserRouter: Bật routing cho ứng dụng (cho phép dùng URL để điều hướng)
     <BrowserRouter>
-      {/* HeaderComponent: Hiển thị ở trên cùng mọi trang */}
-      {/* Giao diện: Navbar với logo "Fresh Food Mart" và menu Home/Store/Login */}
-      <HeaderComponent />
-      
-      {/* Container: Bootstrap class để căn giữa và giới hạn chiều rộng */}
-      {/* mt-4: margin-top để tạo khoảng cách với header */}
-      <div className="container mt-4">
-        {/* Routes: Định nghĩa các route (đường dẫn URL) */}
-        <Routes>
-          {/* Route "/": Khi URL = "/" hoặc "/" → hiển thị HomePage */}
-          <Route path="/" element={<HomePage />} />
-          
-          {/* Route "/store": Khi URL = "/store" → hiển thị StorePage */}
-          <Route path="/store" element={<StorePage />} />
-        </Routes>
-      </div>
-      
-      {/* FooterComponent: Hiển thị ở dưới cùng mọi trang */}
-      {/* Giao diện: Footer màu đen với copyright text */}
-      <FooterComponent />
+      {/* AuthProvider: Wrap toàn bộ app để các components có thể sử dụng useAuth() */}
+      <AuthProvider>
+        {/* HeaderComponent: Hiển thị ở trên cùng mọi trang */}
+        {/* Giao diện: Navbar với logo "Fresh Food Mart" và menu Home/Store/Login */}
+        <HeaderComponent />
+        
+        {/* Container: Bootstrap class để căn giữa và giới hạn chiều rộng */}
+        {/* mt-4: margin-top để tạo khoảng cách với header */}
+        <div className="container mt-4">
+          {/* Routes: Định nghĩa các route (đường dẫn URL) */}
+          <Routes>
+            {/* Route "/": Khi URL = "/" hoặc "/" → hiển thị HomePage */}
+            <Route path="/" element={<HomePage />} />
+            
+            {/* Route "/store": Khi URL = "/store" → hiển thị StorePage */}
+            <Route path="/store" element={<StorePage />} />
+            
+            {/* Route "/login": Khi URL = "/login" → hiển thị LoginForm */}
+            <Route path="/login" element={<LoginForm />} />
+          </Routes>
+        </div>
+        
+        {/* FooterComponent: Hiển thị ở dưới cùng mọi trang */}
+        {/* Giao diện: Footer màu đen với copyright text */}
+        <FooterComponent />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

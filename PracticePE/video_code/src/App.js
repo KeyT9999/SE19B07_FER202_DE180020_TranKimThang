@@ -31,129 +31,146 @@ import Home from './pages/Home';
 import Videos from './pages/Videos';
 // Import CSS styles
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";      // Quản lý authentication (login/logout)
+// Import các components (pages)
+import LoginForm from "./components/LoginForm";              // Trang đăng nhập
 
 /**
- * COMPONENT: App
+ * COMPONENT: Navbar
  * 
- * MỤC ĐÍCH: Component gốc - Setup routing và layout chung
+ * MỤC ĐÍCH: Component navbar với các link điều hướng và login/logout
  * 
- * RETURN: JSX với Router, Navbar, và Routes
+ * RETURN: JSX với navbar
  */
-function App() {
-  /**
-   * RETURN: JSX structure
-   * 
-   * CẤU TRÚC:
-   * - BrowserRouter: Enable routing
-   * - Navbar: Navigation bar (hiển thị trên mọi trang)
-   * - Routes: Container cho routes
-   * - Route: Định nghĩa từng route
-   */
+function Navbar() {
+  // useAuth: Hook từ AuthContext để truy cập user, isAuthenticated, logout
+  const { user, isAuthenticated, logout } = useAuth();
+
   return (
-    /**
-     * BROWSER ROUTER
-     * 
-     * TẠI SAO DÙNG BrowserRouter?
-     * - Sử dụng History API (URL đẹp: /videos thay vì /#/videos)
-     * - Cho phép browser Back/Forward buttons hoạt động
-     * - Server có thể cấu hình để serve index.html cho mọi route (SPA)
-     * 
-     * CÁCH HOẠT ĐỘNG:
-     * 1. BrowserRouter wrap toàn bộ app
-     * 2. Theo dõi URL changes (History API)
-     * 3. Match URL với Routes
-     * 4. Render component tương ứng
-     */
-    <BrowserRouter>
-      {/* 
-        NAVIGATION BAR
-        MỤC ĐÍCH: Thanh điều hướng hiển thị trên mọi trang
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      {/* Container: Giới hạn width và căn giữa */}
+      <div className="container">
+        {/* 
+          BRAND/LOGO: Link về trang Home
+          navbar-brand: Bootstrap class cho brand/logo
+          to="/": Link tới route '/' (Home page)
+        */}
+        <Link className="navbar-brand" to="/">
+          Video App
+        </Link>
         
-        BOOTSTRAP CLASSES:
-        - navbar: Base navbar class
-        - navbar-expand-lg: Expand trên màn hình lớn (collapse trên mobile)
-        - navbar-dark: Text màu sáng (cho dark background)
-        - bg-dark: Background màu đen
-      */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        {/* Container: Giới hạn width và căn giữa */}
-        <div className="container">
-          {/* 
-            BRAND/LOGO: Link về trang Home
-            navbar-brand: Bootstrap class cho brand/logo
-            to="/": Link tới route '/' (Home page)
-          */}
-          <Link className="navbar-brand" to="/">
-            Video App
-          </Link>
+        {/* 
+          HAMBURGER MENU BUTTON (Mobile)
+          Chỉ hiển thị trên mobile khi navbar collapse
           
+          data-bs-toggle="collapse": Bootstrap toggle collapse
+          data-bs-target="#navbarNav": Target element để collapse/expand
+          aria-*: Accessibility attributes
+        */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          {/* Hamburger icon (3 lines) */}
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        
+        {/* 
+          NAVBAR MENU: Container cho navigation links
+          collapse navbar-collapse: Bootstrap collapse (ẩn/hiện trên mobile)
+          id="navbarNav": Target cho hamburger button
+        */}
+        <div className="collapse navbar-collapse" id="navbarNav">
           {/* 
-            HAMBURGER MENU BUTTON (Mobile)
-            Chỉ hiển thị trên mobile khi navbar collapse
+            NAVIGATION LINKS LIST
+            navbar-nav: Bootstrap class cho nav list
+            ms-auto: Margin-start auto (đẩy links sang bên phải)
+          */}
+          <ul className="navbar-nav ms-auto">
+            {/* Home link */}
+            <li className="nav-item">
+              {/* 
+                LINK COMPONENT
+                TẠI SAO DÙNG <Link> THAY VÌ <a>?
+                - <Link>: Client-side routing (không reload trang)
+                - <a>: Server-side routing (reload trang)
+                
+                CÁCH HOẠT ĐỘNG:
+                1. User click link
+                2. React Router intercept click
+                3. Cập nhật URL (History API)
+                4. Render component mới (không reload)
+                
+                ATTRIBUTES:
+                - to="/": Route target (Home page)
+                - className="nav-link": Bootstrap nav link style
+              */}
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
             
-            data-bs-toggle="collapse": Bootstrap toggle collapse
-            data-bs-target="#navbarNav": Target element để collapse/expand
-            aria-*: Accessibility attributes
-          */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            {/* Hamburger icon (3 lines) */}
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          
-          {/* 
-            NAVBAR MENU: Container cho navigation links
-            collapse navbar-collapse: Bootstrap collapse (ẩn/hiện trên mobile)
-            id="navbarNav": Target cho hamburger button
-          */}
-          <div className="collapse navbar-collapse" id="navbarNav">
-            {/* 
-              NAVIGATION LINKS LIST
-              navbar-nav: Bootstrap class cho nav list
-              ms-auto: Margin-start auto (đẩy links sang bên phải)
-            */}
-            <ul className="navbar-nav ms-auto">
-              {/* Home link */}
+            {/* Videos link */}
+            <li className="nav-item">
+              {/* Link tới trang Videos */}
+              <Link className="nav-link" to="/videos">
+                Videos
+              </Link>
+            </li>
+
+            {/* Login/Logout link - Hiển thị dựa trên trạng thái đăng nhập */}
+            {isAuthenticated ? (
+              <>
+                {/* Hiển thị username nếu đã đăng nhập */}
+                <li className="nav-item">
+                  <span className="nav-link text-light">
+                    Welcome, {user?.username}!
+                  </span>
+                </li>
+                {/* Logout button */}
+                <li className="nav-item">
+                  <button
+                    className="nav-link btn btn-link text-light"
+                    onClick={logout}
+                    style={{ border: 'none', background: 'none', cursor: 'pointer' }}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              /* Login link - Hiển thị nếu chưa đăng nhập */
               <li className="nav-item">
-                {/* 
-                  LINK COMPONENT
-                  TẠI SAO DÙNG <Link> THAY VÌ <a>?
-                  - <Link>: Client-side routing (không reload trang)
-                  - <a>: Server-side routing (reload trang)
-                  
-                  CÁCH HOẠT ĐỘNG:
-                  1. User click link
-                  2. React Router intercept click
-                  3. Cập nhật URL (History API)
-                  4. Render component mới (không reload)
-                  
-                  ATTRIBUTES:
-                  - to="/": Route target (Home page)
-                  - className="nav-link": Bootstrap nav link style
-                */}
-                <Link className="nav-link" to="/">
-                  Home
+                <Link className="nav-link" to="/login">
+                  Login
                 </Link>
               </li>
-              
-              {/* Videos link */}
-              <li className="nav-item">
-                {/* Link tới trang Videos */}
-                <Link className="nav-link" to="/videos">
-                  Videos
-                </Link>
-              </li>
-            </ul>
-          </div>
+            )}
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+  );
+}
+
+/**
+ * COMPONENT: AppContent
+ * 
+ * MỤC ĐÍCH: Component chứa routing logic (cần nằm trong AuthProvider)
+ * 
+ * RETURN: JSX với Navbar và Routes
+ */
+function AppContent() {
+  return (
+    <>
+      {/* Navigation Bar */}
+      <Navbar />
 
       {/* 
         ROUTES CONTAINER
@@ -193,7 +210,81 @@ function App() {
           4. Videos component mount -> useEffect -> fetch videos từ Redux
         */}
         <Route path="/videos" element={<Videos />} />
+
+        {/* 
+          ROUTE: Login page
+          
+          ATTRIBUTES:
+          - path="/login": Match URL '/login'
+          - element={<LoginForm />}: Render LoginForm component khi match
+          
+          LUỒNG:
+          1. User truy cập '/login' hoặc click Login link
+          2. Route match path="/login"
+          3. Render <LoginForm /> component
+          4. User nhập thông tin và đăng nhập
+        */}
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
+    </>
+  );
+}
+
+/**
+ * COMPONENT: App
+ * 
+ * MỤC ĐÍCH: Component gốc - Setup routing và layout chung
+ * 
+ * RETURN: JSX với Router, AuthProvider, Navbar, và Routes
+ */
+function App() {
+  /**
+   * RETURN: JSX structure
+   * 
+   * CẤU TRÚC:
+   * - BrowserRouter: Enable routing
+   * - AuthProvider: Wrap toàn bộ app để cung cấp authentication context
+   * - AppContent: Component chứa Navbar và Routes (cần nằm trong AuthProvider)
+   */
+  return (
+    /**
+     * BROWSER ROUTER
+     * 
+     * TẠI SAO DÙNG BrowserRouter?
+     * - Sử dụng History API (URL đẹp: /videos thay vì /#/videos)
+     * - Cho phép browser Back/Forward buttons hoạt động
+     * - Server có thể cấu hình để serve index.html cho mọi route (SPA)
+     * 
+     * CÁCH HOẠT ĐỘNG:
+     * 1. BrowserRouter wrap toàn bộ app
+     * 2. Theo dõi URL changes (History API)
+     * 3. Match URL với Routes
+     * 4. Render component tương ứng
+     */
+    <BrowserRouter>
+      {/* 
+        AUTH PROVIDER
+        MỤC ĐÍCH: Wrap toàn bộ app để cung cấp authentication context
+        
+        TẠI SAO CẦN AuthProvider?
+        - Quản lý state toàn cục về authentication (user, isAuthenticated, loading, error)
+        - Cung cấp functions: login(), logout(), clearError()
+        - Tất cả components bên trong có thể sử dụng useAuth() để truy cập auth state
+        
+        CÁCH HOẠT ĐỘNG:
+        1. AuthProvider mount → fetch danh sách users từ JSON Server
+        2. Lưu users vào state
+        3. Khi LoginForm gọi login() → xác thực và cập nhật state
+        4. Các components khác có thể sử dụng useAuth() để check authentication status
+      */}
+      <AuthProvider>
+        {/* 
+          APP CONTENT
+          Component chứa Navbar và Routes
+          Cần nằm trong AuthProvider để có thể sử dụng useAuth()
+        */}
+        <AppContent />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
