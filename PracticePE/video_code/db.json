@@ -1,0 +1,53 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "title": "React Tutorial for Beginners",
+      "description": "This is the first video",
+      "url": "https://www.youtube.com/embed/SqcY0GlETPk?si=Uh6d9BmNwizQ7lh-",
+      "duration": "5:30",
+      "image": "https://example.com/video1.jpg",
+      "comments": [
+        {
+          "id": 1,
+          "text": "Great video!",
+          "user": "User1"
+        },
+        {
+          "id": 2,
+          "text": "Thanks for sharing!",
+          "user": "User2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "React JS Full Course 2023 | Build an App and Master React in 1 Hour",
+      "description": "This is the second video",
+      "url": "https://www.youtube.com/embed/b9eMGE7QtTk?si=u6DOYlRIMf3XW-3j",
+      "duration": "3:45",
+      "image": "https://example.com/video2.jpg",
+      "comments": [
+        {
+          "id": 3,
+          "text": "Good content!",
+          "user": "User3"
+        },
+        {
+          "id": 4,
+          "text": "Thanks for sharing!",
+          "user": "User4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "React JS Full Course for Beginners | Complete All-in-One Tutorial | 9 Hours",
+      "description": "This is the third video",
+      "url": "https://www.youtube.com/embed/RVFAyFWO4go?si=4c63xf2lgNdoEN9p",
+      "duration": "8:12",
+      "image": "https://example.com/video3.jpg",
+      "comments": []
+    }
+  ]
+}

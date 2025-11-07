@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "nam123",
+      "password": "123456",
+      "fullName": "Nguyễn Văn Nam"
+    },
+    {
+      "id": "2",
+      "username": "hainguyen",
+      "password": "123456",
+      "fullName": "Nguyễn Hải"
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "userId": "1",
+      "semester": "Spring 2025",
+      "course": "Web Development",
+      "amount": 3500000,
+      "date": "2025-02-15T00:00:00.000Z",
+      "notes": "Paid in full via bank transfer"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "semester": "Spring 2025",
+      "course": "Database Systems",
+      "amount": 4000000,
+      "date": "2025-03-05T00:00:00.000Z",
+      "notes": "Installment 1"
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "semester": "Spring 2025",
+      "course": "Mobile Programming",
+      "amount": 4200000,
+      "date": "2025-03-18T00:00:00.000Z",
+      "notes": "Includes lab fee"
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "semester": "Summer 2025",
+      "course": "Cloud Computing",
+      "amount": 3800000,
+      "date": "2025-06-02T00:00:00.000Z",
+      "notes": "Early bird discount applied"
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "semester": "Summer 2025",
+      "course": "Machine Learning",
+      "amount": 4500000,
+      "date": "2025-06-20T00:00:00.000Z",
+      "notes": "Pending confirmation"
+    },
+    {
+      "id": "6",
+      "userId": "2",
+      "semester": "Summer 2025",
+      "course": "Data Visualization",
+      "amount": 3200000,
+      "date": "2025-07-05T00:00:00.000Z",
+      "notes": "Paid with scholarship"
+    },
+    {
+      "id": "7",
+      "userId": "2",
+      "semester": "Fall 2025",
+      "course": "Information Security",
+      "amount": 4100000,
+      "date": "2025-09-10T00:00:00.000Z",
+      "notes": "Requires follow-up"
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "semester": "Fall 2025",
+      "course": "Project Management",
+      "amount": 3600000,
+      "date": "2025-09-22T00:00:00.000Z",
+      "notes": "Paid in cash"
+    },
+    {
+      "id": "9",
+      "userId": "2",
+      "semester": "Fall 2025",
+      "course": "Advanced Algorithms",
+      "amount": 4700000,
+      "date": "2025-10-05T00:00:00.000Z",
+      "notes": "Installment 2"
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "semester": "Winter 2025",
+      "course": "Artificial Intelligence",
+      "amount": 4800000,
+      "date": "2025-12-12T00:00:00.000Z",
+      "notes": "Corporate sponsorship"
+    },
+    {
+      "id": "11",
+      "userId": "2",
+      "semester": "Winter 2025",
+      "course": "UI/UX Design",
+      "amount": 3000000,
+      "date": "2025-12-20T00:00:00.000Z",
+      "notes": "Evening class"
+    },
+    {
+      "id": "12",
+      "userId": "1",
+      "semester": "Winter 2025",
+      "course": "DevOps Fundamentals",
+      "amount": 3300000,
+      "date": "2025-12-28T00:00:00.000Z",
+      "notes": "Company reimbursement pending"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "mobiles": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro Max",
+      "description": "Apple iPhone 15 Pro Max với chip A17 Pro, màn hình 6.7 inch Super Retina XDR, camera chính 48MP, pin lâu dài và hỗ trợ USB-C. Thiết kế titan cao cấp, chống nước IP68.",
+      "price": 29990000,
+      "image": "https://tse2.mm.bing.net/th/id/OIP.qg2nZArqvrlgy02imfB8XgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S24 Ultra",
+      "description": "Samsung Galaxy S24 Ultra với bút S Pen tích hợp, màn hình Dynamic AMOLED 2X 6.8 inch, camera 200MP, chip Snapdragon 8 Gen 3, pin 5000mAh và hỗ trợ S Pen.",
+      "price": 28990000,
+      "image": "https://th.bing.com/th/id/R.248469deff6cd28850d0f1b9bf6d8258?rik=Hj%2bHnKOSkNuD1w&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 3,
+      "name": "Xiaomi 14 Pro",
+      "description": "Xiaomi 14 Pro với chip Snapdragon 8 Gen 3, màn hình AMOLED 6.73 inch 2K, camera Leica 50MP, pin 4880mAh sạc nhanh 120W, thiết kế cao cấp với khung nhôm và mặt kính.",
+      "price": 19990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 4,
+      "name": "OPPO Find X7 Ultra",
+      "description": "OPPO Find X7 Ultra với hệ thống camera 4 camera Hasselblad, màn hình LTPO AMOLED 6.82 inch, chip Snapdragon 8 Gen 3, pin 5000mAh và sạc siêu nhanh 100W.",
+      "price": 24990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 5,
+      "name": "vivo X100 Pro",
+      "description": "vivo X100 Pro với camera ZEISS 50MP, màn hình AMOLED 6.78 inch, chip MediaTek Dimensity 9300, pin 5400mAh và sạc nhanh 120W. Thiết kế sang trọng với khung kim loại.",
+      "price": 21990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 6,
+      "name": "iPhone 14",
+      "description": "Apple iPhone 14 với chip A15 Bionic, màn hình 6.1 inch Super Retina XDR, camera kép 12MP, pin lâu dài và hỗ trợ 5G. Thiết kế nhôm và kính với 6 màu sắc.",
+      "price": 19990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 7,
+      "name": "Samsung Galaxy A55",
+      "description": "Samsung Galaxy A55 với chip Exynos 1480, màn hình Super AMOLED 6.6 inch, camera chính 50MP, pin 5000mAh và thiết kế kim loại cao cấp. Tích hợp AI camera.",
+      "price": 9490000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 8,
+      "name": "Xiaomi Redmi Note 13 Pro",
+      "description": "Xiaomi Redmi Note 13 Pro với chip Snapdragon 7s Gen 2, màn hình AMOLED 6.67 inch 120Hz, camera 200MP, pin 5100mAh và sạc nhanh 67W. Giá tốt, hiệu năng mạnh mẽ.",
+      "price": 7990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 9,
+      "name": "OnePlus 12",
+      "description": "OnePlus 12 với chip Snapdragon 8 Gen 3, màn hình LTPO AMOLED 6.82 inch 120Hz, camera Hasselblad 50MP, pin 5400mAh và sạc nhanh 100W. Thiết kế premium với khung nhôm.",
+      "price": 18990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 10,
+      "name": "Google Pixel 8 Pro",
+      "description": "Google Pixel 8 Pro với chip Tensor G3, màn hình LTPO OLED 6.7 inch, camera 50MP với AI Magic Eraser, pin 5050mAh. Camera được đánh giá cao với tính năng AI độc đáo.",
+      "price": 22990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 11,
+      "name": "Realme GT 6",
+      "description": "Realme GT 6 với chip Snapdragon 8s Gen 3, màn hình AMOLED 6.78 inch 120Hz, camera Sony IMX882 50MP, pin 5500mAh và sạc nhanh 120W. Hiệu năng gaming mạnh mẽ.",
+      "price": 12990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    },
+    {
+      "id": 12,
+      "name": "iPhone 13",
+      "description": "Apple iPhone 13 với chip A15 Bionic, màn hình 6.1 inch Super Retina XDR, camera kép 12MP, pin lâu dài và hỗ trợ 5G. Giá tốt trong phân khúc iPhone.",
+      "price": 16990000,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/iphone-14-vs-iphone-14-pro-esquire-1664539190.jpg?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "email": "user1@example.com",
+      "password": "password123"
+    },
+    {
+      "id": 3,
+      "username": "testuser",
+      "email": "test@example.com",
+      "password": "test123"
+    },
+    {
+      "id": 4,
+      "username": "nguyenvana",
+      "email": "nguyenvana@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 5,
+      "username": "tranthib",
+      "email": "tranthib@yahoo.com",
+      "password": "password456"
+    }
+  ]
+}
+

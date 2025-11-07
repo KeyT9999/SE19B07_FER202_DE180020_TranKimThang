@@ -1,0 +1,186 @@
+/**
+ * FILE: App.css
+ * MỤC ĐÍCH: Custom CSS styles cho ứng dụng
+ * VỊ TRÍ: src/App.css
+ * 
+ * LUỒNG ÁP DỤNG STYLES:
+ * 1. App.js import './App.css'
+ * 2. CSS được webpack bundle vào JavaScript
+ * 3. Styles được inject vào <head> khi app load
+ * 4. Browser apply styles cho các elements
+ * 
+ * TẠI SAO CẦN CUSTOM CSS?
+ * - Bootstrap chỉ cung cấp base styles
+ * - Custom styles để tạo unique design
+ * - Responsive adjustments
+ * - Visual effects (hover, transitions)
+ */
+
+/* 
+ * GLOBAL BODY STYLES
+ * 
+ * background-color: Màu nền của toàn bộ app
+ * #f8f9fa: Màu xám nhạt (Bootstrap gray-100)
+ * 
+ * TẠI SAO SET Ở BODY?
+ * - Body là container lớn nhất
+ * - Ảnh hưởng đến toàn bộ app
+ * - Tạo background nhất quán
+ */
+body {
+  background-color: #f8f9fa;
+}
+
+/* 
+ * JUMBOTRON STYLES
+ * 
+ * Jumbotron: Hero section ở trang Home
+ * 
+ * GRADIENT BACKGROUND:
+ * - linear-gradient: Tạo gradient (chuyển màu)
+ * - 135deg: Góc gradient (135 độ = diagonal)
+ * - #667eea: Màu tím xanh (điểm bắt đầu)
+ * - #764ba2: Màu tím (điểm kết thúc)
+ * 
+ * TẠI SAO DÙNG GRADIENT?
+ * - Tạo visual interest
+ * - Modern, attractive design
+ * - Stand out từ background
+ * 
+ * BORDER RADIUS:
+ * - 0.5rem: Bo góc nhẹ (8px)
+ * - Tạo rounded corners cho jumbotron
+ */
+.jumbotron {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;              /* Text màu trắng (tương phản với background đậm) */
+  border-radius: 0.5rem;     /* Bo góc */
+}
+
+/* 
+ * JUMBOTRON HEADING
+ * 
+ * Đảm bảo heading có màu trắng
+ * (Override bất kỳ style nào khác)
+ */
+.jumbotron h1 {
+  color: white;
+}
+
+/* 
+ * JUMBOTRON PARAGRAPH
+ * 
+ * Text màu trắng với opacity nhẹ
+ * rgba(255, 255, 255, 0.9): Trắng 90% opacity
+ * Tạo subtle contrast với heading
+ */
+.jumbotron p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 
+ * CARD STYLES
+ * 
+ * Cards: Video cards trong trang Videos
+ * 
+ * TRANSITION:
+ * - transition: Tạo animation khi property thay đổi
+ * - transform 0.2s: Animation transform trong 0.2 giây
+ * - box-shadow 0.2s: Animation shadow trong 0.2 giây
+ * 
+ * HEIGHT: 100%
+ * - Đảm bảo tất cả cards có cùng height
+ * - Grid layout đẹp hơn (không bị lệch)
+ */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;  /* Smooth animation */
+  height: 100%;                                  /* Full height để align cards */
+}
+
+/* 
+ * CARD HOVER EFFECT
+ * 
+ * Khi user hover vào card:
+ * - transform: translateY(-5px): Di chuyển lên trên 5px
+ * - box-shadow: Tạo shadow lớn hơn (tạo depth)
+ * 
+ * TẠI SAO DÙNG HOVER EFFECT?
+ * - Visual feedback khi user tương tác
+ * - Modern UX pattern
+ * - Draw attention to interactive elements
+ * 
+ * !important: Override Bootstrap default shadow
+ */
+.card:hover {
+  transform: translateY(-5px);                                    /* Lift effect */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;      /* Larger shadow */
+}
+
+/* 
+ * CARD BODY
+ * 
+ * Flexbox layout cho card body
+ * - display: flex
+ * - flex-direction: column: Xếp elements theo chiều dọc
+ * 
+ * TẠI SAO DÙNG FLEXBOX?
+ * - Dễ dàng align content
+ * - Consistent spacing
+ * - Responsive behavior
+ */
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+ * NAVBAR BRAND
+ * 
+ * Logo/brand name styling
+ * - font-weight: bold: In đậm
+ * - font-size: 1.5rem: Kích thước lớn hơn (24px)
+ */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* 
+ * RESPONSIVE ADJUSTMENTS
+ * 
+ * MEDIA QUERY: @media (max-width: 768px)
+ * - Áp dụng styles cho màn hình nhỏ hơn 768px (mobile/tablet)
+ * 
+ * TẠI SAO CẦN RESPONSIVE?
+ * - Mobile devices có màn hình nhỏ
+ * - Text/font size cần điều chỉnh
+ * - Better UX trên mobile
+ * 
+ * LUỒNG:
+ * 1. Browser check screen width
+ * 2. Nếu <= 768px: Apply styles trong media query
+ * 3. Nếu > 768px: Ignore (dùng default styles)
+ */
+@media (max-width: 768px) {
+  /* 
+   * JUMBOTRON HEADING (MOBILE)
+   * 
+   * Giảm font size trên mobile
+   * - font-size: 2rem (từ display-4 ~ 3.5rem)
+   * - Phù hợp với màn hình nhỏ
+   */
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+  
+  /* 
+   * JUMBOTRON LEAD TEXT (MOBILE)
+   * 
+   * Giảm font size của lead text
+   * - font-size: 1rem (từ lead ~ 1.25rem)
+   * - Readable trên mobile
+   */
+  .jumbotron p.lead {
+    font-size: 1rem;
+  }
+}
