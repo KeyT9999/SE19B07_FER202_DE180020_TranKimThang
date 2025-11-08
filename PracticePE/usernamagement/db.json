@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "nam123",
+      "password": "123456",
+      "fullName": "Nguyễn Văn Nam",
+      "role": "admin",
+      "status": "active",
+      "avatar": "/images/users/admin.jpg"
+    },
+    {
+      "id": "2",
+      "username": "hainguyen",
+      "password": "123456",
+      "fullName": "Nguyễn Hải",
+      "role": "user",
+      "status": "active",
+      "avatar": "/images/users/admin.jpg"
+    },
+    {
+      "id": "3",
+      "username": "thanh123",
+      "password": "123456",
+      "fullName": "Nguyễn Văn Thanh",
+      "role": "admin",
+      "status": "active",
+      "avatar": "/images/users/admin.jpg"
+    },
+    {
+      "id": "4",
+      "username": "thanhpt",
+      "password": "123456",
+      "fullName": "Phạm Thanh",
+      "role": "user",
+      "status": "blocked",
+      "avatar": "/images/users/admin.jpg"
+    }
+  ]
+}
