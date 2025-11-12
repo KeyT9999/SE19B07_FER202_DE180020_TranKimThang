@@ -3,9 +3,9 @@
  * Manage reviews for restaurant owner's restaurants
  */
 
-import React, { useState, useEffect } from 'react';
-import { Container, Card, Row, Col, Badge, Button, Form, InputGroup, Alert } from 'react-bootstrap';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Container, Card, Row, Col, Badge, Button, Form } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import { useApp } from '../../contexts/AppContext';
 import api from '../../services/api';
 import Loading from '../../components/common/Loading';
@@ -13,7 +13,6 @@ import './RestaurantOwnerReviewsPage.css';
 
 function RestaurantOwnerReviewsPage() {
   const { id } = useParams(); // restaurantId (optional)
-  const navigate = useNavigate();
   const { setErrorWithTimeout, setSuccessWithTimeout } = useApp();
   
   const [restaurant, setRestaurant] = useState(null);
@@ -26,15 +25,7 @@ function RestaurantOwnerReviewsPage() {
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState('');
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  useEffect(() => {
-    filterReviews();
-  }, [reviews, selectedRestaurant, ratingFilter]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     try {
       setLoading(true);
       
@@ -64,9 +55,13 @@ function RestaurantOwnerReviewsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, setErrorWithTimeout]);
 
-  const filterReviews = () => {
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  useEffect(() => {
     let filtered = [...reviews];
 
     // Restaurant filter
@@ -82,7 +77,7 @@ function RestaurantOwnerReviewsPage() {
     }
 
     setFilteredReviews(filtered);
-  };
+  }, [ratingFilter, reviews, selectedRestaurant]);
 
   const handleReply = async (reviewId) => {
     if (!replyText.trim()) {

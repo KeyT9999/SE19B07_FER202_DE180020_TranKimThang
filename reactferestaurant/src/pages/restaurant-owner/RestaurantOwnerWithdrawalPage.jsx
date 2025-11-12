@@ -3,10 +3,9 @@
  * Request withdrawal for restaurant owners
  */
 
-import React, { useState, useEffect } from 'react';
-import { Container, Card, Row, Col, Form, Button, Table, Alert } from 'react-bootstrap';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Container, Card, Row, Col, Form, Button, Table, Badge } from 'react-bootstrap';
 import { useApp } from '../../contexts/AppContext';
-import api from '../../services/api';
 import Loading from '../../components/common/Loading';
 import './RestaurantOwnerWithdrawalPage.css';
 
@@ -23,11 +22,7 @@ function RestaurantOwnerWithdrawalPage() {
     bankName: '',
   });
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     try {
       setLoading(true);
       // TODO: Load balance and withdrawal history
@@ -39,7 +34,11 @@ function RestaurantOwnerWithdrawalPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [setErrorWithTimeout]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

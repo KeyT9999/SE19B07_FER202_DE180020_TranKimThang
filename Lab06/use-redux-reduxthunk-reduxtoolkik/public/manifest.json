@@ -1,6 +1,6 @@
 {
-  "short_name": "Book Eat",
-  "name": "Book Eat – Đặt bàn online, giữ chỗ ngay",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

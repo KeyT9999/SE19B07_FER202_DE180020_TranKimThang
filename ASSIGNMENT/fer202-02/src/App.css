@@ -1,0 +1,156 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, #f5f7fb 0%, #eef3ff 100%);
+}
+
+.login-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.login-card .card-header {
+  background: #f8f9fc;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.login-card .card-body {
+  padding: 2.5rem 2.25rem;
+}
+
+.login-card .form-control {
+  background-color: #eef4ff;
+  border-radius: 12px;
+  border: 1px solid #dfe8ff;
+  padding: 0.85rem 1rem;
+}
+
+.login-card .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.login-card .btn {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.login-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.login-actions .btn {
+  flex: 1;
+  max-width: 180px;
+  box-shadow: 0 12px 24px rgba(15, 76, 129, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(15, 76, 129, 0.22);
+}
+
+.login-card .btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #2563eb);
+  border: none;
+}
+
+.login-card .btn-secondary {
+  background: #5c677d;
+  border: none;
+}
+
+.dashboard {
+  background: #f5f7fb;
+  min-height: calc(100vh - 75px);
+}
+
+.dashboard .card {
+  border: none;
+  border-radius: 16px;
+}
+
+.dashboard .card-header {
+  border-bottom: none;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.dashboard .card-body {
+  padding: 1.75rem;
+}
+
+.dashboard .table > :not(caption) > * > * {
+  padding: 0.85rem 1rem;
+}
+
+.dashboard .table thead th {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.dashboard .table tbody tr.table-active {
+  background-color: rgba(13, 110, 253, 0.08);
+}
+
+.navbar-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+.app-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
