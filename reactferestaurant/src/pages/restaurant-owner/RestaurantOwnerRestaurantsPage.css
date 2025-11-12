@@ -1,0 +1,92 @@
+.restaurant-owner-restaurants-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.btn-add-restaurant-owner {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-add-restaurant-owner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.empty-state-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.restaurant-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.restaurant-card-owner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-image-owner {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.restaurant-header-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.restaurant-name-owner {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.restaurant-info-owner {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-info-owner p {
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-actions-owner {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .btn-add-restaurant-owner {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .restaurant-image-owner {
+    height: 150px;
+  }
+}
+

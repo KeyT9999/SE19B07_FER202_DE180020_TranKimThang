@@ -1,0 +1,154 @@
+.admin-dashboard-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.page-header-admin {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title-admin {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle-admin {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.stat-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.stat-card-admin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon-admin {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.stat-icon-admin.users {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-icon-admin.restaurants {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-icon-admin.bookings {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-icon-admin.active {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stat-value-admin {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label-admin {
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-link-admin {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.stat-link-admin:hover {
+  color: #764ba2;
+}
+
+.quick-action-card-admin,
+.info-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  height: 100%;
+}
+
+.card-header-admin {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+}
+
+.quick-actions-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-action-btn-admin {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  color: #212529;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.quick-action-btn-admin:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
+
+.info-item-admin {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.info-item-admin:last-child {
+  border-bottom: none;
+}
+
+.info-label-admin {
+  font-weight: 500;
+  color: #212529;
+}
+
+@media (max-width: 768px) {
+  .page-title-admin {
+    font-size: 2rem;
+  }
+  
+  .stat-value-admin {
+    font-size: 2rem;
+  }
+}
+

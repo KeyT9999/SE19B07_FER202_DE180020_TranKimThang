@@ -1,0 +1,74 @@
+.table-selector {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--resy-black);
+  display: flex;
+  align-items: center;
+}
+
+.table-card {
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  height: 100%;
+}
+
+.table-card:hover {
+  border-color: var(--resy-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.table-card.selected {
+  border-color: var(--resy-green);
+  background-color: rgba(5, 150, 105, 0.05);
+}
+
+.table-card.unavailable {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.table-card.unavailable:hover {
+  transform: none;
+  border-color: var(--neutral-200);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--resy-black);
+  margin: 0;
+}
+
+.table-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-capacity,
+.table-deposit,
+.table-status {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--resy-gray);
+  display: flex;
+  align-items: center;
+}
+
+.table-capacity svg {
+  color: var(--resy-blue);
+}
+

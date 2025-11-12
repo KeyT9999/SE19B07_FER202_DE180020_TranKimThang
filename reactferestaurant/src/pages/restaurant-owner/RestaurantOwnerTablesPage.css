@@ -1,0 +1,63 @@
+.restaurant-owner-tables-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.back-button-owner {
+  color: #6c757d;
+  text-decoration: none;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+.back-button-owner:hover {
+  color: #495057;
+  text-decoration: underline;
+}
+
+.empty-state-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.table-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-card-owner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.table-header-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table-header-owner h5 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.table-info-owner {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.table-actions-owner {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+

@@ -1,0 +1,112 @@
+.restaurant-owner-reviews-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.filter-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: white;
+}
+
+.review-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card-owner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.review-header-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.review-customer-name-owner {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.review-rating-owner {
+  font-size: 1rem;
+}
+
+.review-date-owner {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.review-content-owner {
+  margin-bottom: 1rem;
+}
+
+.review-comment-owner {
+  color: #495057;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.review-reply-owner {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #28a745;
+  margin-top: 1rem;
+}
+
+.reply-header-owner {
+  color: #28a745;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.reply-content-owner {
+  color: #495057;
+  margin: 0;
+}
+
+.review-actions-owner {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.reply-form-owner {
+  margin-top: 1rem;
+}
+
+.stats-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.stat-item-owner {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-value-owner {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label-owner {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+

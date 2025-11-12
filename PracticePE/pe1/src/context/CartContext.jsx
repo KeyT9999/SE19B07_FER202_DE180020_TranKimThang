@@ -8,8 +8,8 @@
  * 
  * Luồng hoạt động:
  * 1. Khi user click "Add to Cart" ở MotobikesList:
- *    - MotobikesList gọi addToCart(motorbike) từ CartContext
- *    - addToCart() dispatch action ADD_TO_CART → thêm motorbike vào items hoặc tăng quantity nếu đã có
+ *    - MotobikesList gọi addToCart(camera) từ CartContext
+ *    - addToCart() dispatch action ADD_TO_CART → thêm camera vào items hoặc tăng quantity nếu đã có
  * 2. Khi user thay đổi quantity ở CartPage:
  *    - CartPage gọi updateQuantity(id, quantity)
  *    - updateQuantity() dispatch action UPDATE_QUANTITY → cập nhật quantity của item
@@ -165,18 +165,18 @@ export function CartProvider({ children }) {
   /**
    * addToCart - Function thêm item vào giỏ hàng
    * 
-   * @param {Object} motorbike - Object motorbike cần thêm vào giỏ hàng
+   * @param {Object} camera - Object camera cần thêm vào giỏ hàng
    * 
    * Logic:
-   * - Dispatch action ADD_TO_CART với payload là motorbike
+   * - Dispatch action ADD_TO_CART với payload là camera
    * - cartReducer sẽ xử lý: nếu đã có → tăng quantity, nếu chưa → thêm mới
    * 
    * Được gọi từ:
    * - MotobikesList.jsx: Khi user click "Add to Cart" button
    */
-  const addToCart = (motorbike) => {
+  const addToCart = (camera) => {
     // Dispatch action ADD_TO_CART → cartReducer sẽ xử lý thêm vào giỏ hàng
-    dispatch({ type: "ADD_TO_CART", payload: motorbike });
+    dispatch({ type: "ADD_TO_CART", payload: camera });
   };
 
   /**

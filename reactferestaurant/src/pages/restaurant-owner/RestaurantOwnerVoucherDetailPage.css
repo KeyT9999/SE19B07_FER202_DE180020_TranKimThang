@@ -1,0 +1,28 @@
+.restaurant-owner-voucher-detail-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.detail-card-owner, .usage-card-owner, .actions-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.stat-item-owner {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-value-owner {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label-owner {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+

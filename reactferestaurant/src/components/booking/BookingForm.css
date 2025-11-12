@@ -1,0 +1,56 @@
+.booking-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-form .card {
+  border: none;
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+.booking-form .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 1.5rem;
+}
+
+.booking-form .card-header h2 {
+  color: white;
+  margin: 0;
+}
+
+.booking-form .card-body {
+  padding: 2rem;
+}
+
+.availability-check {
+  padding: 1rem;
+  background: var(--resy-light-gray);
+  border-radius: var(--radius-md);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-200);
+}
+
+@media (max-width: 768px) {
+  .booking-form .card-body {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+}
+

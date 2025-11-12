@@ -1,0 +1,29 @@
+.admin-restaurant-requests-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.page-header-admin {
+  margin-bottom: 2rem;
+}
+
+.page-title-admin {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.filter-card-admin, .requests-card-admin, .empty-state-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.card-header-admin {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+

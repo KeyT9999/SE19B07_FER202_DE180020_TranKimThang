@@ -45,8 +45,8 @@ const initialState = {
 export function FavouriteProvider({ children }) {
   const [state, dispatch] = useReducer(favouriteReducer, initialState);
 
-  const addToFavourite = (mobile) => {
-    dispatch({ type: "ADD_TO_FAVOURITE", payload: mobile });
+  const addToFavourite = (camera) => {
+    dispatch({ type: "ADD_TO_FAVOURITE", payload: camera });
   };
 
   const removeFromFavourite = (id) => {

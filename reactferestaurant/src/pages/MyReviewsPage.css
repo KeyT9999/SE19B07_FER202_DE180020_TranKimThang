@@ -1,0 +1,25 @@
+.my-reviews-page {
+  min-height: 60vh;
+}
+
+.review-restaurant-name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ds-primary-600, #0066cc);
+}
+
+.review-restaurant-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.review-restaurant-name a:hover {
+  text-decoration: underline;
+}
+
+.review-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+

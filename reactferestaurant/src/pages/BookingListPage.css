@@ -1,0 +1,79 @@
+.booking-list-page {
+  min-height: 60vh;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ds-neutral-900, #1a1a1a);
+}
+
+.page-subtitle {
+  color: var(--ds-neutral-600, #666);
+  font-size: 1rem;
+}
+
+.booking-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.booking-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.booking-restaurant-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ds-neutral-900, #1a1a1a);
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.booking-detail-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--ds-neutral-700, #4a4a4a);
+}
+
+.booking-detail-item strong {
+  margin-right: 0.5rem;
+  color: var(--ds-neutral-900, #1a1a1a);
+}
+
+.booking-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .booking-actions {
+    margin-top: 1rem;
+  }
+  
+  .booking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

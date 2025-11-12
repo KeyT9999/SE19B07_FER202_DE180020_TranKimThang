@@ -1,0 +1,22 @@
+.admin-chat-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.chat-list-card-admin, .chat-room-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  height: 600px;
+}
+
+.chat-item-admin {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-item-admin:hover {
+  background-color: #f8f9fa;
+}
+

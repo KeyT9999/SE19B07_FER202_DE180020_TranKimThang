@@ -1,0 +1,12 @@
+.admin-withdrawal-management-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.withdrawals-card-admin, .filter-card-admin, .empty-state-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+

@@ -1,0 +1,18 @@
+.admin-restaurant-request-detail-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.detail-card-admin, .actions-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.back-button-admin {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0;
+}
+

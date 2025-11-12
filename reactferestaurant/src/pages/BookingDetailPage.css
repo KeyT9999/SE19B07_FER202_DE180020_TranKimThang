@@ -1,0 +1,161 @@
+.booking-detail-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.page-header-luxury {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.back-button-luxury {
+  color: #6c757d;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.back-button-luxury:hover {
+  color: #495057;
+  text-decoration: underline;
+}
+
+.page-title-luxury {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.booking-id-luxury {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.booking-status-card-luxury {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge-large {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.info-card-luxury {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-header-luxury {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+}
+
+.restaurant-name-luxury {
+  color: #212529;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.restaurant-info {
+  color: #6c757d;
+}
+
+.detail-item-luxury {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item-luxury i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  margin-top: 0.25rem;
+}
+
+.detail-item-luxury strong {
+  display: block;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.table-item-luxury,
+.service-item-luxury {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.table-item-luxury h6,
+.service-item-luxury h6 {
+  color: #212529;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card-luxury {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+}
+
+.summary-item-luxury {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  color: #6c757d;
+}
+
+.summary-item-luxury strong {
+  color: #212529;
+  font-size: 1.1rem;
+}
+
+.total-luxury {
+  border-top: 2px solid #dee2e6;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.total-luxury strong {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+.actions-card-luxury {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.booking-actions-luxury {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .summary-card-luxury {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+

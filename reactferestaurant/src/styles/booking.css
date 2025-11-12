@@ -1,0 +1,150 @@
+/* Booking-specific styles */
+/* Additional styles for booking pages */
+
+.booking-summary {
+  background: var(--resy-light-gray);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.booking-summary-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--resy-black);
+}
+
+.booking-summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+.booking-summary-item:last-child {
+  border-bottom: none;
+}
+
+.booking-summary-label {
+  font-weight: 500;
+  color: var(--resy-gray);
+}
+
+.booking-summary-value {
+  font-weight: 600;
+  color: var(--resy-black);
+}
+
+.booking-total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--resy-red);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--neutral-200);
+}
+
+/* Time slot selection */
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.time-slot-button {
+  padding: 0.75rem;
+  border: 2px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  background: white;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+  font-weight: 500;
+}
+
+.time-slot-button:hover {
+  border-color: var(--resy-blue);
+  background: var(--resy-light-gray);
+}
+
+.time-slot-button.selected {
+  border-color: var(--resy-green);
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--resy-green);
+}
+
+.time-slot-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Table selection animation */
+@keyframes tableSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.table-card.selected {
+  animation: tableSelect 0.3s ease;
+}
+
+/* Loading overlay */
+.booking-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Success message */
+.booking-success {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(5, 150, 105, 0.1);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+
+.booking-success-icon {
+  font-size: 3rem;
+  color: var(--resy-green);
+  margin-bottom: 1rem;
+}
+
+.booking-success-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--resy-green);
+  margin-bottom: 0.5rem;
+}
+
+.booking-success-message {
+  color: var(--resy-gray);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .time-slot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .booking-summary {
+    padding: 1rem;
+  }
+}
+

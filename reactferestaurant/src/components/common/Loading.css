@@ -1,0 +1,15 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 2rem;
+}
+
+.loading-message {
+  margin-top: 1rem;
+  color: var(--resy-gray);
+  font-size: 0.875rem;
+}
+

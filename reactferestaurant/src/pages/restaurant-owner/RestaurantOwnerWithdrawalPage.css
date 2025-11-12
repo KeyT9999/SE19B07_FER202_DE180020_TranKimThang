@@ -1,0 +1,19 @@
+.restaurant-owner-withdrawal-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.balance-card-owner, .form-card-owner, .history-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.balance-amount-owner {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #28a745;
+  text-align: center;
+}
+

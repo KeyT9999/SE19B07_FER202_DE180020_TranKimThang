@@ -1,0 +1,168 @@
+.restaurant-owner-profile-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.profile-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.account-info-owner {
+  text-align: center;
+}
+
+.avatar-section-owner {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-circle-owner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.account-name-owner {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.account-email-owner {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.account-phone-owner,
+.account-address-owner {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.stats-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.stat-item-owner {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.stat-item-owner:last-child {
+  border-bottom: none;
+}
+
+.stat-value-owner {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label-owner {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.restaurants-section-owner {
+  margin-bottom: 2rem;
+}
+
+.section-header-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title-owner {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+}
+
+.restaurant-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.restaurant-card-owner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-card-header-owner {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+.restaurant-image-owner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-placeholder-owner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+}
+
+.restaurant-placeholder-owner i {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.restaurant-status-badge-owner {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.restaurant-name-owner {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-address-owner {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-actions-owner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.empty-state-card-owner {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+

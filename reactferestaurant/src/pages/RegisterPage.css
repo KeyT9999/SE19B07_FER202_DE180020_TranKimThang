@@ -1,0 +1,322 @@
+/* Register Page Styling */
+.auth-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-icon {
+  color: var(--ds-neutral-700, #374151);
+  margin-right: var(--ds-space-2, 0.5rem);
+}
+
+.required {
+  color: var(--ds-neutral-900, #1A1A1A);
+  font-weight: var(--ds-font-weight-semibold, 600);
+}
+
+.form-text {
+  color: var(--ds-neutral-600, #6B7280);
+  font-size: var(--ds-font-size-sm, 0.875rem);
+}
+
+.invalid-feedback {
+  color: var(--ds-neutral-900, #1A1A1A);
+  font-size: var(--ds-font-size-sm, 0.875rem);
+  margin-top: var(--ds-space-1, 0.25rem);
+  font-weight: var(--ds-font-weight-medium, 500);
+}
+
+/* Enhanced form styling */
+.ds-form-input {
+  border: 2px solid var(--ds-neutral-300, #D1D5DB);
+  transition: all 0.3s ease;
+}
+
+.ds-form-input:focus {
+  border-color: var(--ds-neutral-900, #1A1A1A);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.ds-form-input-error {
+  border-color: var(--ds-neutral-900, #1A1A1A);
+  background-color: rgba(0,0,0,0.02);
+}
+
+.ds-btn-primary {
+  background-color: var(--ds-neutral-900, #1A1A1A);
+  border-color: var(--ds-neutral-900, #1A1A1A);
+  color: var(--ds-primary-white, #FFFFFF);
+}
+
+.ds-btn-primary:hover {
+  background-color: var(--ds-neutral-700, #374151);
+  border-color: var(--ds-neutral-700, #374151);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ds-btn-secondary {
+  background-color: var(--ds-primary-white, #FFFFFF);
+  border: 2px solid var(--ds-neutral-900, #1A1A1A);
+  color: var(--ds-neutral-900, #1A1A1A);
+}
+
+.ds-btn-secondary:hover {
+  background-color: var(--ds-neutral-900, #1A1A1A);
+  color: var(--ds-primary-white, #FFFFFF);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ds-link-primary {
+  color: var(--ds-neutral-900, #1A1A1A);
+  font-weight: var(--ds-font-weight-semibold, 600);
+}
+
+.ds-link-primary:hover {
+  color: var(--ds-neutral-700, #374151);
+  text-decoration: underline;
+}
+
+/* Card styling */
+.ds-card {
+  border: 1px solid var(--ds-neutral-300, #D1D5DB);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 12px;
+}
+
+.ds-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Icon styling */
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ds-neutral-900, #1A1A1A);
+  color: var(--ds-primary-white, #FFFFFF);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Account Type Selection Modal */
+.account-type-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ds-space-4, 1rem);
+  z-index: 1050;
+}
+
+.account-type-overlay.hidden {
+  display: none;
+}
+
+.account-type-modal {
+  background: var(--ds-primary-white, #FFFFFF);
+  border-radius: var(--ds-radius-2xl, 1rem);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 680px;
+  border: 1px solid var(--ds-neutral-300, #D1D5DB);
+}
+
+.account-type-actions {
+  display: grid;
+  gap: var(--ds-space-4, 1rem);
+}
+
+.account-type-card {
+  text-align: left;
+  cursor: pointer;
+  border: 2px solid var(--ds-neutral-300, #D1D5DB);
+  border-radius: var(--ds-radius-lg, 0.5rem);
+  transition: all 0.3s ease;
+  background: var(--ds-primary-white, #FFFFFF);
+  padding: 0;
+}
+
+.account-type-card:hover {
+  border-color: var(--ds-neutral-900, #1A1A1A);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  background: var(--ds-neutral-50, #F9FAFB);
+}
+
+.account-type-card:focus {
+  border-color: var(--ds-neutral-900, #1A1A1A);
+  outline: 3px solid rgba(0,0,0,0.1);
+  outline-offset: 2px;
+}
+
+.account-type-card .ds-card-body {
+  display: flex;
+  gap: var(--ds-space-4, 1rem);
+  align-items: center;
+  padding: var(--ds-space-5, 1.25rem) var(--ds-space-6, 1.5rem);
+}
+
+.account-type-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ds-neutral-900, #1A1A1A);
+  color: var(--ds-primary-white, #FFFFFF);
+  font-size: var(--ds-font-size-xl, 1.25rem);
+  flex-shrink: 0;
+}
+
+.account-type-title {
+  font-size: var(--ds-font-size-xl, 1.25rem);
+  font-weight: var(--ds-font-weight-semibold, 600);
+  margin: 0;
+  color: var(--ds-neutral-900, #1A1A1A);
+}
+
+.account-type-desc {
+  margin: 4px 0 0 0;
+  color: var(--ds-neutral-600, #6B7280);
+  font-size: var(--ds-font-size-sm, 0.875rem);
+}
+
+.account-type-card:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.2);
+  outline-offset: 2px;
+}
+
+/* Design System Utilities */
+.ds-bg-gray-50 {
+  background-color: #F9FAFB;
+}
+
+.ds-space-4 {
+  padding: 1rem 0;
+}
+
+.ds-space-8 {
+  padding: 2rem 0;
+}
+
+.ds-space-12 {
+  padding: 3rem 0;
+}
+
+.ds-flex {
+  display: flex;
+}
+
+.ds-flex-col {
+  flex-direction: column;
+}
+
+.ds-items-center {
+  align-items: center;
+}
+
+.ds-text-center {
+  text-align: center;
+}
+
+.ds-gap-2 {
+  gap: 0.5rem;
+}
+
+.ds-heading-4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.ds-text-sm {
+  font-size: 0.875rem;
+}
+
+.ds-text-secondary {
+  color: #6B7280;
+}
+
+.ds-mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ds-mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.ds-mr-1 {
+  margin-right: 0.25rem;
+}
+
+.ds-mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ds-heading-5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ds-heading-3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.ds-text-large {
+  font-size: 1.125rem;
+}
+
+.ds-btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.ds-mb-0 {
+  margin-bottom: 0;
+}
+
+.ds-justify-center {
+  justify-content: center;
+}
+
+.ds-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.ds-mt-8 {
+  margin-top: 2rem;
+}
+
+.ds-btn-secondary {
+  background-color: #FFFFFF;
+  border: 2px solid #1A1A1A;
+  color: #1A1A1A;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.ds-btn-secondary:hover {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+}
+
+.ds-btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+

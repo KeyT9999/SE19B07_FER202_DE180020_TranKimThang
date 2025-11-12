@@ -1,0 +1,74 @@
+.restaurant-detail {
+  margin-bottom: 2rem;
+}
+
+.restaurant-info-card {
+  border: none;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--resy-black);
+  margin-bottom: 1rem;
+}
+
+.cuisine-badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+}
+
+.restaurant-description {
+  font-size: 1.1rem;
+  color: var(--resy-gray);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--resy-light-gray);
+  border-radius: var(--radius-md);
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--resy-black);
+  font-size: 0.95rem;
+}
+
+.meta-icon {
+  color: var(--resy-red);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.website-link {
+  color: var(--resy-blue);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.website-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .restaurant-name {
+    font-size: 2rem;
+  }
+  
+  .restaurant-description {
+    font-size: 1rem;
+  }
+}
+

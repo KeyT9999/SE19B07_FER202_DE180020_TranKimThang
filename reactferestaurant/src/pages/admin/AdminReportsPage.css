@@ -1,0 +1,35 @@
+.admin-reports-page {
+  min-height: 80vh;
+  padding: 2rem 0;
+  background: #f8f9fa;
+}
+
+.stat-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card-admin:hover {
+  transform: translateY(-2px);
+}
+
+.stat-label-admin {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value-admin {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.chart-card-admin {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+

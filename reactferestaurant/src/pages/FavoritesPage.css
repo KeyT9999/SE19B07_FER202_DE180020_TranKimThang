@@ -1,0 +1,79 @@
+.favorites-page {
+  min-height: 60vh;
+}
+
+.favorite-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.favorite-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.favorite-card:hover .favorite-image {
+  transform: scale(1.05);
+}
+
+.favorite-remove-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.favorite-remove-btn:hover {
+  opacity: 1;
+}
+
+.favorite-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.favorite-title a {
+  color: var(--ds-neutral-900, #1a1a1a);
+  text-decoration: none;
+}
+
+.favorite-title a:hover {
+  color: var(--ds-primary-600, #0066cc);
+}
+
+.favorite-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.favorite-address {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  min-height: 2.5rem;
+}
+
